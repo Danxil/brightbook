@@ -1,0 +1,106 @@
+extends ../includes/layout
+
+block main-content
+    .header
+        .container
+            .row
+                .socials
+                    a.socials__item.socials__fb
+                    a.socials__item.socials__tw
+                    a.socials__item.socials__inst
+                    a.socials__item.socials__pin
+            .row
+                a(href="/").logo
+                ul.menu
+                    li.menu__item
+                        a.menu__link.active Книги
+                    li.menu__item
+                        a.menu__link Авторы
+                    li.menu__item
+                        a.menu__link Больше
+                    li.menu__item
+                        a.menu__link Войти к себе
+                    li.menu__item
+                        a.search-btn
+    .sub-menu
+        .localization
+            a.localization__btn.active РУС
+            a.localization__btn УКР
+        .container.categories
+           a.categories__item Бизнес
+           a.categories__item Биографии и мемуары
+           a.categories__item Детские
+           a.categories__item Здоровье
+           a.categories__item Мужчина и женщина
+           a.categories__item Политика
+           a.categories__item Родителям
+           a.categories__item Саморазвитие
+           a.categories__item Христианство
+           a.categories__item Художественные
+           a.categories__item.categories__item_fancy Подарок мужчине
+           a.categories__item.categories__item_fancy В подарок женщине
+           a.categories__item.categories__item_fancy В отпуск
+    .slider
+        .slider__left-side
+            img(src="/images/books/great-orange.png")
+        .slider__right-side
+            img(src="/images/books/lady.png")
+            .slider__text-small События
+            .slider__text-big Книжный аперитив с Ириной Славинской
+    .books-list
+        .container
+            .book
+                img.book__img(src="/images/books/pic-1.png")
+                .book__details
+                    .book__title Ловушки мышления
+                    .book__author Чип Хиз, Дэн Хиз
+                    a.book__more подробней →
+            .book
+                img.book__img(src="/images/books/pic-1.png")
+                .book__details
+                    .book__title Ловушки мышления
+                    .book__author Чип Хиз, Дэн Хиз
+                    a.book__more подробней →
+            .book
+                img.book__img(src="/images/books/pic-1.png")
+                .book__details
+                    .book__title Ловушки мышления
+                    .book__author Чип Хиз, Дэн Хиз
+                    a.book__more подробней →
+            .book
+                img.book__img(src="/images/books/pic-1.png")
+                .book__details
+                    .book__title Ловушки мышления
+                    .book__author Чип Хиз, Дэн Хиз
+                    a.book__more подробней →
+            .book
+                img.book__img(src="/images/books/pic-1.png")
+                .book__details
+                    .book__title Ловушки мышления
+                    .book__author Чип Хиз, Дэн Хиз
+                    a.book__more подробней →
+    .news
+        .container
+            .news__title Новости
+            .news__list
+                .newpiece
+                    img(src="/images/books/lady-small.jpg").newpiece__image
+                    .newpiece__info
+                        .newpiece__date 22 мая
+                        a.newpiece__title Книжный аперитив с Ириной Славинской
+                .newpiece
+                    img(src="/images/books/lady-small.jpg").newpiece__image
+                    .newpiece__info
+                        .newpiece__date 22 мая
+                        a.newpiece__title Книжный аперитив с Ириной Славинской
+                .newpiece
+                    img(src="/images/books/lady-small.jpg").newpiece__image
+                    .newpiece__info
+                        .newpiece__date 22 мая
+                        a.newpiece__title Книжный аперитив с Ириной Славинской
+                .newpiece
+                    img(src="/images/books/lady-small.jpg").newpiece__image
+                    .newpiece__info
+                        .newpiece__date 22 мая
+                        a.newpiece__title Книжный аперитив с Ириной Славинской
+    .main(ng-view)

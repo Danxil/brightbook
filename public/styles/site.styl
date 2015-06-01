@@ -1,0 +1,281 @@
+@import vars
+
+@font-face {
+  font-family: Lato;
+  src: url('../fonts/Lato-Regular.ttf') format("truetype");
+}
+
+*
+  font-family: Lato
+  outline none
+
+a, button
+  cursor: pointer !important
+
+a
+  color black !important
+  text-decoration none !important
+
+a:hover
+  color red !important
+  text-decoration: none !important
+
+html, body
+  height: 100%
+
+//-----HEADER-----
+
+.header
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  color red !important
+  background: #ffffff
+  z-index 1000
+  border-bottom 1px solid bordergray
+  padding-bottom 19px
+
+.socials
+  float: right
+  margin: 40px 10px 0 0
+
+.socials__item
+  width: 32px
+  height: 32px
+  margin-left: 5px;
+  display: inline-block
+
+.socials__fb
+  background-image url("../images/icons/fb.png")
+.socials__tw
+  background-image url("../images/icons/twitter.png")
+.socials__inst
+  background-image url("../images/icons/instagram.png")
+.socials__pin
+  background-image url("../images/icons/pinterest.png")
+
+.logo
+  background-color: #fff
+  background-image url("../images/logo.png")
+  height 45px
+  width: 303px
+  display: block
+  float: left
+  -webkit-background-size: cover
+  background-size: cover
+
+.menu
+  display: block
+  float: right
+  list-style none
+  margin-right: 20px
+
+.menu__item
+  @extend .h6
+  display: inline-block
+  margin-left 30px
+
+.menu__item .menu__link
+  width: 12px
+  height: 6px
+  background-position right
+  padding-right 30px
+  background-repeat no-repeat
+  background-image url("../images/icons/brace-down.png")
+
+.menu__item .menu__link.active, .menu__item menu__link:hover
+  background-image url("../images/icons/brace-up.png")
+  color red !important
+
+.search-btn
+  background-image url("../images/icons/search.png")
+  width: 20px
+  height 19px
+  display: block
+  float: right
+  background-position bottom
+  background-repeat no-repeat
+
+.search-btn:hover, .search-btn.active
+  background-image url("../images/icons/search-red.png")
+
+
+//-----SUBMENU-----
+
+.sub-menu
+  margin-top  150px
+  position: relative
+  background lightergray
+  border-bottom 1px solid bordergray
+  width: 100%
+  padding 20px 0
+
+.categories__item
+  @extend .h2
+  display: inline-block
+  margin-right 40px
+  margin-top: 20px
+
+.categories
+  text-align: center
+
+.categories__item_fancy
+  @extend .georgia
+
+.localization
+  @extend .h6
+  -webkit-transform: rotate(-90deg)
+  -moz-transform: rotate(-90deg)
+  -ms-transform: rotate(-90deg)
+  -o-transform: rotate(-90deg)
+  transform: rotate(-90deg)
+  position absolute
+  left -10px
+  top 50%
+  margin-top -25px
+
+.localization__btn
+  margin-right 20px
+
+.localization__btn.active
+  color red !important
+
+//-----SLIDER-----
+
+.slider
+  margin: 15px auto 0 auto
+  width: 1050px
+  overflow: hidden
+
+.slider__left-side
+  margin-left: 30px
+  float: left
+
+.slider__right-side
+  float: left
+  -webkit-box-shadow: 10px 10px 20px 1px rgba(0,0,0,0.2);
+  -moz-box-shadow: 10px 10px 20px 1px rgba(0,0,0,0.2);
+  box-shadow: 10px 10px 20px 1px rgba(0,0,0,0.2);
+  position: relative
+
+.slider__text-small
+  @extend .h6
+  position: absolute
+  top 150px
+  left: 40px
+
+.slider__text-big
+  @extend .h1
+  color red
+  position: absolute
+  left 40px
+  bottom 40px
+  width: 350px
+
+
+//-----BOOKSLIST-----
+
+.books-list
+  margin-top: 30px
+  min-height 250px
+
+.book
+  float: left
+  margin-left 70px
+  position: relative
+  cursor: pointer
+  width: 170px
+
+.book:first-child
+  margin-left: 0
+
+.book__img
+  position absolute
+  top 0
+  width: 170px
+
+.book__details
+  width: 100%
+  margin-top: 150px
+  text-align: center
+
+.book:hover .book__details
+  margin-top: 250px
+  -webkit-transition: 0.3s ease-in
+  -moz-transition: 0.3s ease-in
+  -ms-transition: 0.3s ease-in
+  -o-transition: 0.3s ease-in
+  transition: 0.3s ease-in
+
+.book__title
+  @extend .h6
+  color red
+  display: block
+
+.book__author
+  @extend .h6
+  display: block
+
+.book__more
+  @extend .h6
+  width 0
+  display: block
+  padding: 0
+  height: 30px
+  border-top 2px solid red
+  margin: 10px auto 0 auto
+  overflow: hidden
+  padding-top 5px
+  padding-bottom 5px
+
+.book:hover .book__more
+  width 130px
+  padding-left: 10px
+  padding-right: 10px
+  -webkit-transition: 0.3s ease-in
+  -moz-transition: 0.3s ease-in
+  -ms-transition: 0.3s ease-in
+  -o-transition: 0.3s ease-in
+  transition: 0.3s ease-in
+  transition-delay 0.4s
+
+//-----NEWS-----
+
+.news
+  margin-top: 30px
+
+.news__title
+  @extend .h1
+  width: 100%
+  color red
+  padding 25px 0
+  border-bottom 1px solid bordergray
+
+.news__list
+  width: 100%
+
+.newpiece
+  background lightgray
+  width: 48.5%
+  margin-right 3%
+  margin-top: 30px
+  float: left
+  position: relative
+
+.newpiece:nth-child(even)
+  margin-right 0
+
+.newpiece__date
+  @extend .h5
+  position: absolute
+  top 50px
+  left 240px
+
+.newpiece__title
+  @extend .h5
+  position: absolute
+  bottom 20px
+  left 240px
+
+

@@ -1,0 +1,10 @@
+{
+  "name": "BrightBooks",
+  "version": "0.0.0",
+  "authors": [
+    "Joseph <umnick.jo@mail.ru>"
+  ],
+  "description": "BrightBooks",
+  "license": "MIT",
+  "private": true
+}
