@@ -1,0 +1,64 @@
+.slider
+    .slider__left-side
+        img(src="/images/books/great-red.jpg")
+    .slider__right-side
+        img(src="/images/books/lady.png")
+        .slider__text-small События
+        .slider__text-big Книжный аперитив с Ириной Славинской
+.books-list
+    .container
+        .book(ng-repeat="book in books", ng-mouseover="switchBookImg(book)", ng-mouseout="switchBookImg(book)")
+            img.book__img(src="{{book.img}}")
+            .book__details
+                .book__title {{book.title}}
+                .book__author {{book.author}}
+                a.book__more подробней →
+.news
+    .container
+        .news__title Новости
+        .news__list
+            .newpiece
+                img(src="/images/books/lady-small.jpg").newpiece__image
+                .newpiece__info
+                    .newpiece__date 22 мая
+                    a.newpiece__title Книжный аперитив с Ириной Славинской
+            .newpiece
+                img(src="/images/books/lady-small.jpg").newpiece__image
+                .newpiece__info
+                    .newpiece__date 22 мая
+                    a.newpiece__title Книжный аперитив с Ириной Славинской
+            .newpiece
+                img(src="/images/books/lady-small.jpg").newpiece__image
+                .newpiece__info
+                    .newpiece__date 22 мая
+                    a.newpiece__title Книжный аперитив с Ириной Славинской
+            .newpiece
+                img(src="/images/books/lady-small.jpg").newpiece__image
+                .newpiece__info
+                    .newpiece__date 22 мая
+                    a.newpiece__title Книжный аперитив с Ириной Славинской
+.subscribal
+    .subscribal__title Получайте информацию о наших новинках первыми!
+    .subscribal__form
+        input.subscribal__input(type="text", placeholder="введите Ваш электронный адрес")
+        button.subscribal__button отправить →
+.container
+    .feedback
+        .feedback__inner
+            .row
+                .feedback__title Напишите нам
+                .feedback__rect
+                .feedback__square
+            .row
+                .col-lg-4
+                    .row
+                        label(for="feedbackSubject") Тема/Кому
+                        input(type="text", id="feedbackSubject", placeholder="Хочу купить много книг")
+                    .row
+                        label(for="feedbackContact") Ваш контакт
+                        input(type="text", id="feedbackContact", placeholder="Телефон, скайп, почта...")
+                .col-lg-8
+                    label(for="feedbackMessage") Ваше сообщение
+                    textarea(id="feedbackMessage")
+            .row
+                button.feedback__submit отправить →

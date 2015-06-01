@@ -43,6 +43,21 @@
 .text-red {
   color: #c20e1a !important;
 }
+.text-darkgray {
+  color: #5d5d5d !important;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
+.underline {
+  text-decoration: underline !important;
+}
 @font-face {
   font-family: Lato;
   src: url("../fonts/Lato-Regular.ttf") format("truetype");
@@ -151,11 +166,25 @@ label {
 }
 .sub-menu {
   margin-top: 150px;
-  position: relative;
   background: #f1f1f1;
-  border-bottom: 1px solid #e5e5e5;
   width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: 0.3s ease-in;
+  -moz-transition: 0.3s ease-in;
+  -ms-transition: 0.3s ease-in;
+  -o-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+}
+.sub-menu_visible {
+  max-height: 240px;
+  border-bottom: 1px solid #e5e5e5;
   padding: 20px 0;
+  -webkit-transition: 0.3s ease-in;
+  -moz-transition: 0.3s ease-in;
+  -ms-transition: 0.3s ease-in;
+  -o-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
 }
 .categories__item {
   display: inline-block;
@@ -172,9 +201,7 @@ label {
   -o-transform: rotate(-90deg);
   transform: rotate(-90deg);
   position: absolute;
-  left: -10px;
-  top: 50%;
-  margin-top: -25px;
+  top: 235px;
 }
 .localization__btn {
   margin-right: 20px;
@@ -303,18 +330,31 @@ label {
   float: left;
   position: relative;
 }
+.newpiece__image {
+  float: left;
+}
+.newpiece__info {
+  position: relative;
+  height: 200px;
+  width: 300px;
+  float: left;
+}
 .newpiece:nth-child(even) {
   margin-right: 0;
+}
+.newpiece:nth-child(4n + 2) .newpiece__image,
+.newpiece:nth-child(4n + 3) .newpiece__image {
+  float: right;
 }
 .newpiece__date {
   position: absolute;
   top: 50px;
-  left: 240px;
+  left: 40px;
 }
 .newpiece__title {
   position: absolute;
   bottom: 20px;
-  left: 240px;
+  left: 40px;
 }
 .subscribal {
   width: 100%;
@@ -441,4 +481,9 @@ label {
   margin-top: 50px;
   padding: 40px 0;
   border-top: 1px solid #b7b7b7;
+  color: #5d5d5d !important;
+}
+.socials_footer {
+  margin: 0;
+  float: left;
 }
