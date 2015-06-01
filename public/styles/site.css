@@ -1,6 +1,8 @@
 .h1,
 .slider__text-big,
-.news__title {
+.news__title,
+.subscribal__title,
+.feedback__title {
   font-size: 24pt !important;
 }
 .h2,
@@ -24,7 +26,13 @@
 .slider__text-small,
 .book__title,
 .book__author,
-.book__more {
+.book__more,
+.subscribal__input,
+.subscribal__button,
+.feedback label,
+.feedback input[type="text"],
+.feedback textarea,
+.feedback__submit {
   font-size: 12pt !important;
 }
 .georgia,
@@ -58,6 +66,9 @@ a:hover {
 html,
 body {
   height: 100%;
+}
+label {
+  cursor: pointer;
 }
 .header {
   top: 0;
@@ -173,19 +184,31 @@ body {
 }
 .slider {
   margin: 15px auto 0 auto;
-  width: 1050px;
   overflow: hidden;
+  width: 1050px;
+  height: 400px;
 }
 .slider__left-side {
-  margin-left: 30px;
+  margin-right: 80px;
   float: left;
+  height: 100%;
+}
+.slider__left-side img {
+  height: 100%;
 }
 .slider__right-side {
   float: left;
+  height: 100%;
+  position: relative;
+  padding-bottom: 30px;
+  margin-bottom: -20px;
+  box-sizing: padding-box;
+}
+.slider__right-side img {
+  height: 100%;
   -webkit-box-shadow: 10px 10px 20px 1px rgba(0,0,0,0.2);
   -moz-box-shadow: 10px 10px 20px 1px rgba(0,0,0,0.2);
   box-shadow: 10px 10px 20px 1px rgba(0,0,0,0.2);
-  position: relative;
 }
 .slider__text-small {
   position: absolute;
@@ -200,18 +223,18 @@ body {
   width: 350px;
 }
 .books-list {
-  margin-top: 30px;
+  margin-top: 25px;
   min-height: 250px;
 }
 .book {
   float: left;
-  margin-left: 70px;
+  margin-left: 48px;
   position: relative;
   cursor: pointer;
   width: 170px;
 }
 .book:first-child {
-  margin-left: 0;
+  margin-left: 32px;
 }
 .book__img {
   position: absolute;
@@ -222,14 +245,14 @@ body {
   width: 100%;
   margin-top: 150px;
   text-align: center;
-}
-.book:hover .book__details {
-  margin-top: 250px;
   -webkit-transition: 0.3s ease-in;
   -moz-transition: 0.3s ease-in;
   -ms-transition: 0.3s ease-in;
   -o-transition: 0.3s ease-in;
   transition: 0.3s ease-in;
+}
+.book:hover .book__details {
+  margin-top: 250px;
 }
 .book__title {
   color: #c20e1a;
@@ -248,17 +271,17 @@ body {
   overflow: hidden;
   padding-top: 5px;
   padding-bottom: 5px;
-}
-.book:hover .book__more {
-  width: 130px;
-  padding-left: 10px;
-  padding-right: 10px;
   -webkit-transition: 0.3s ease-in;
   -moz-transition: 0.3s ease-in;
   -ms-transition: 0.3s ease-in;
   -o-transition: 0.3s ease-in;
   transition: 0.3s ease-in;
   transition-delay: 0.4s;
+}
+.book:hover .book__more {
+  width: 130px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .news {
   margin-top: 30px;
@@ -292,4 +315,130 @@ body {
   position: absolute;
   bottom: 20px;
   left: 240px;
+}
+.subscribal {
+  width: 100%;
+  background: url("../images/subscribe-bg.jpg");
+  background-size: cover;
+  height: 550px;
+  text-align: center;
+  margin-top: 70px;
+}
+.subscribal__title {
+  color: #fff;
+  margin-top: 200px;
+  display: inline-block;
+}
+.subscribal__form {
+  width: 550px;
+  margin: 40px auto;
+}
+.subscribal__input {
+  background: rgba(255,255,255,0.65);
+  border: 1px solid #fff;
+  padding: 20px 40px;
+  display: inline-block;
+  width: 370px;
+}
+.subscribal__input::-webkit-input-placeholder {
+  color: #000 !important;
+}
+.subscribal__input:-moz-placeholder {
+  color: #000 !important;
+}
+.subscribal__input::-moz-placeholder {
+  color: #000 !important;
+}
+.subscribal__input:-ms-input-placeholder {
+  color: #000 !important;
+}
+.subscribal__button {
+  color: #fff;
+  background: rgba(255,21,0,0.55);
+  display: inline-block;
+  border: 1px solid #fff;
+  border-left: 0;
+  padding: 20px 40px;
+  transition: 0.3s ease-in;
+}
+.subscribal__button:hover {
+  background: rgba(255,21,0,0.75);
+}
+.feedback {
+  background-color: #ededed;
+  padding: 20px;
+  margin-top: 50px;
+}
+.feedback__inner {
+  background: #fff;
+  padding: 20px;
+  position: relative;
+}
+.feedback__title {
+  color: #c20e1a;
+}
+.feedback__inner > .row {
+  margin: 0 0 20px 0;
+}
+.feedback__inner > .row:last-child {
+  margin-bottom: 0;
+}
+.feedback__inner > .row > .col-lg-8 {
+  padding: 0;
+}
+.feedback label {
+  margin: 5px 0;
+  display: block;
+}
+.feedback input[type="text"] {
+  margin-bottom: 10px;
+  width: 90%;
+}
+.feedback input[type="text"]::-webkit-input-placeholder {
+  color: #5d5d5d !important;
+}
+.feedback input[type="text"]:-moz-placeholder {
+  color: #5d5d5d !important;
+}
+.feedback input[type="text"]::-moz-placeholder {
+  color: #5d5d5d !important;
+}
+.feedback input[type="text"]:-ms-input-placeholder {
+  color: #5d5d5d !important;
+}
+.feedback input[type="text"],
+.feedback textarea {
+  display: block;
+  border: 1px solid #b7b7b7;
+  padding: 20px;
+}
+.feedback textarea {
+  width: 100%;
+  height: 171px;
+}
+.feedback__submit {
+  float: right;
+  border: none;
+  background: transparent;
+  color: #c20e1a;
+}
+.feedback__rect {
+  width: 180px;
+  height: 25px;
+  margin-top: 20px;
+  background: #ededed;
+}
+.feedback__square {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: block;
+  height: 60px;
+  width: 60px;
+  background: #ededed;
+}
+.footer {
+  margin-top: 50px;
+  padding: 40px 0;
+  border-top: 1px solid #b7b7b7;
 }
