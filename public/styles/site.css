@@ -32,6 +32,7 @@
 .feedback label,
 .feedback input[type="text"],
 .feedback textarea,
+.feedback select,
 .feedback__submit {
   font-size: 12pt !important;
 }
@@ -210,7 +211,7 @@ label {
   color: #c20e1a !important;
 }
 .slider {
-  margin: 15px auto 0 auto;
+  margin: 45px auto 0 auto;
   overflow: hidden;
   width: 1050px;
   height: 400px;
@@ -446,8 +447,17 @@ label {
 .feedback input[type="text"]:-ms-input-placeholder {
   color: #5d5d5d !important;
 }
+.feedback select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("../images/icons/brace-down.png");
+  background-position: right 20px center;
+  background-repeat: no-repeat;
+  width: 90%;
+}
 .feedback input[type="text"],
-.feedback textarea {
+.feedback textarea,
+.feedback select {
   display: block;
   border: 1px solid #b7b7b7;
   padding: 20px;

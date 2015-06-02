@@ -161,7 +161,7 @@ label
 //-----SLIDER-----
 
 .slider
-  margin: 15px auto 0 auto
+  margin: 45px auto 0 auto
   overflow: hidden
   width: 1050px
   height 400px
@@ -395,7 +395,15 @@ label
   margin-bottom: 10px
   width: 90%
 
-.feedback input[type="text"], .feedback textarea
+.feedback select
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image url("../images/icons/brace-down.png");
+  background-position right 20px center
+  background-repeat no-repeat
+  width: 90%
+
+.feedback input[type="text"], .feedback textarea, .feedback select
   @extend .h6
   display: block
   border 1px solid #b7b7b7
