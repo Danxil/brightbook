@@ -5,14 +5,14 @@
 .feedback__title {
   font-size: 24pt !important;
 }
-.h2,
-.categories__item {
+.h2 {
   font-size: 20pt !important;
 }
 .h3 {
   font-size: 18pt !important;
 }
-.h4 {
+.h4,
+.categories__item {
   font-size: 16pt !important;
 }
 .h5,
@@ -95,7 +95,7 @@ label {
   background: #fff;
   z-index: 1000;
   border-bottom: 1px solid #e5e5e5;
-  padding-bottom: 19px;
+  padding: 0 145px 19px 135px;
 }
 .socials {
   float: right;

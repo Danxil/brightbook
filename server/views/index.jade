@@ -2,26 +2,25 @@ extends ../includes/layout
 
 block main-content
     .header
-        .container
-            .row
-                .socials
-                    a.socials__item.socials__fb
-                    a.socials__item.socials__tw
-                    a.socials__item.socials__inst
-                    a.socials__item.socials__pin
-            .row
-                a(href="/").logo
-                ul.menu
-                    li.menu__item
-                        a.menu__link(ng-click="subMenuVisible = !subMenuVisible").active Книги
-                    li.menu__item
-                        a.menu__link(ng-click="subMenuVisible = !subMenuVisible") Авторы
-                    li.menu__item
-                        a.menu__link(ng-click="subMenuVisible = !subMenuVisible") Больше
-                    li.menu__item
-                        a.menu__link(ng-click="subMenuVisible = !subMenuVisible") Войти к себе
-                    li.menu__item
-                        a.search-btn
+        .row
+            .socials
+                a.socials__item.socials__fb
+                a.socials__item.socials__tw
+                a.socials__item.socials__inst
+                a.socials__item.socials__pin
+        .row
+            a(href="/").logo
+            ul.menu
+                li.menu__item
+                    a.menu__link(ng-click="subMenuVisible = !subMenuVisible").active Книги
+                li.menu__item
+                    a.menu__link(ng-click="subMenuVisible = !subMenuVisible") Авторы
+                li.menu__item
+                    a.menu__link(ng-click="subMenuVisible = !subMenuVisible") Больше
+                li.menu__item
+                    a.menu__link(ng-click="subMenuVisible = !subMenuVisible") Войти к себе
+                li.menu__item
+                    a.search-btn
     .localization
         a.localization__btn.active РУС
         a.localization__btn УКР
