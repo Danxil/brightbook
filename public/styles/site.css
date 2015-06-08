@@ -100,6 +100,7 @@ label {
 .header__inner {
   width: 1050px;
   margin: 0 auto;
+  padding-right: 20px;
 }
 .header__line {
   width: 100%;
