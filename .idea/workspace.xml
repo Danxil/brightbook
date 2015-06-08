@@ -33,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="site.styl" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="site.styl" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/styles/site.styl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.107143" vertical-offset="6601" max-vertical-offset="7718">
-              <caret line="400" column="54" selection-start-line="400" selection-start-column="51" selection-end-line="400" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.70302016" vertical-offset="312" max-vertical-offset="7786">
+              <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -53,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vars.styl" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="vars.styl" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/styles/vars.styl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
-              <caret line="0" column="13" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="13" />
+            <state vertical-scroll-proportion="-12.357142" vertical-offset="28" max-vertical-offset="901">
+              <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -66,8 +66,8 @@
       <file leaf-file-name="main.jade" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/app/main/main.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1258">
-              <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1258">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <marker date="1433278356487" expanded="true" signature="2212:2292" placeholder="..." />
               </folding>
@@ -88,8 +88,8 @@
       <file leaf-file-name="index.jade" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/views/index.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1139">
-              <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1156">
+              <caret line="4" column="22" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -830,14 +830,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/views/index.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1139">
-          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/app/main/bbMainCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="141" max-vertical-offset="765">
@@ -846,28 +838,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/styles/vars.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.357142" vertical-offset="28" max-vertical-offset="901">
+          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/app/main/main.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1258">
-          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1258">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <marker date="1433278356487" expanded="true" signature="2212:2292" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/styles/site.styl">
+    <entry file="file://$PROJECT_DIR$/server/views/index.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.107143" vertical-offset="6601" max-vertical-offset="7718">
-          <caret line="400" column="54" selection-start-line="400" selection-start-column="51" selection-end-line="400" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1156">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/styles/vars.styl">
+    <entry file="file://$PROJECT_DIR$/public/styles/site.styl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
-          <caret line="0" column="13" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.70302016" vertical-offset="312" max-vertical-offset="7786">
+          <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
           <folding />
         </state>
       </provider>
