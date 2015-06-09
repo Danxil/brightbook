@@ -86,6 +86,10 @@ body {
 label {
   cursor: pointer;
 }
+.header-false {
+  height: 150px;
+  width: 100%;
+}
 .header {
   top: 0;
   left: 0;
@@ -175,7 +179,6 @@ label {
   background-image: url("../images/icons/search-red.png");
 }
 .sub-menu {
-  margin-top: 150px;
   background: #f1f1f1;
   width: 100%;
   max-height: 0;

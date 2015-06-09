@@ -1,6 +1,7 @@
 extends ../includes/layout
 
 block main-content
+    .header-false#header-false
     .header
         .header__inner
             .header__line
@@ -13,19 +14,19 @@ block main-content
                 a(href="/").logo
                 ul.menu
                     li.menu__item
-                        a.menu__link(ng-click="subMenuVisible = !subMenuVisible").active Книги
+                        a.menu__link(ng-click="subMenuOpen('books')", ng-class="{active: subMenuMarkers.booksVisible}") Книги
                     li.menu__item
-                        a.menu__link(ng-click="subMenuVisible = !subMenuVisible") Авторы
+                        a.menu__link(ng-click="subMenuOpen('authors')", ng-class="{active: subMenuMarkers.authorsVisible}") Авторы
                     li.menu__item
-                        a.menu__link(ng-click="subMenuVisible = !subMenuVisible") Больше
+                        a.menu__link(ng-click="subMenuOpen('more')", ng-class="{active: subMenuMarkers.moreVisible}") Больше
                     li.menu__item
-                        a.menu__link(ng-click="subMenuVisible = !subMenuVisible") Войти к себе
-                    li.menu__item
-                        a.search-btn
+                        a.menu__link(ng-click="subMenuOpen('login')", ng-class="{active: subMenuMarkers.loginVisible}") Войти к себе
+                    li.menu__item(ng-click="subMenuOpen('search')")
+                        a.search-btn(ng-class="{active: subMenuMarkers.searchVisible}")
     .localization
         a.localization__btn.active РУС
         a.localization__btn УКР
-    .sub-menu(ng-class="{'sub-menu_visible': subMenuVisible}")
+    .sub-menu(ng-class="{'sub-menu_visible': subMenuMarkers.booksVisible}")
         .container.categories
            a.categories__item Бизнес
            a.categories__item Биографии и мемуары
@@ -40,6 +41,18 @@ block main-content
            a.categories__item.categories__item_fancy Подарок мужчине
            a.categories__item.categories__item_fancy В подарок женщине
            a.categories__item.categories__item_fancy В отпуск
+    .sub-menu(ng-class="{'sub-menu_visible': subMenuMarkers.authorsVisible}")
+        .container.categories
+           .h3 Авторы
+    .sub-menu(ng-class="{'sub-menu_visible': subMenuMarkers.moreVisible}")
+        .container.categories
+           .h3 Больше
+    .sub-menu(ng-class="{'sub-menu_visible': subMenuMarkers.loginVisible}")
+        .container.categories
+           .h3 Войти к себе
+    .sub-menu(ng-class="{'sub-menu_visible': subMenuMarkers.searchVisible}")
+        .container.categories
+           .h3 Поиск
     .main(ng-view)
     .container
         .footer.h6

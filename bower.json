@@ -6,5 +6,8 @@
   ],
   "description": "BrightBooks",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "angular-scroll": "~0.7.1"
+  }
 }
