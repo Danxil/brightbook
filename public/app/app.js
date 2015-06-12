@@ -8,5 +8,12 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
 
     $routeProvider
         .when('/', {templateUrl: '/partials/main/main', controller: 'bbMainCtrl'})
-        .when('/:page', {templateUrl: '/partials/main/main', controller: 'bbMainCtrl'})
+        .when('/main', {
+            templateUrl: '/partials/main/main',
+            controller: 'bbMainCtrl'
+        })
+        .when('/book', {
+            templateUrl: '/partials/book/book',
+            controller: 'bbBookCtrl'
+        })
 });

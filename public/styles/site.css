@@ -222,8 +222,11 @@ label {
 .localization__btn.active {
   color: #c20e1a !important;
 }
+.main {
+  padding-top: 45px;
+}
 .slider {
-  margin: 45px auto 0 auto;
+  margin: 0 auto 0 auto;
   overflow: hidden;
   width: 1050px;
   height: 400px;
