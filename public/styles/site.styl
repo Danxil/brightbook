@@ -1,9 +1,14 @@
+@import reset
 @import vars
+@import book
 
 @font-face {
   font-family: Lato;
   src: url('../fonts/Lato-Regular.ttf') format("truetype");
 }
+
+.italic
+  font-style italic
 
 *
   font-family: Lato
@@ -296,8 +301,15 @@ label
   padding 25px 0
   border-bottom 1px solid bordergray
 
+.clearfix
+  clear: both
+
 .news__list
   width: 100%
+
+.newpiece-wrapp
+  .newpiece.true
+    width 100%
 
 .newpiece
   background lightgray
@@ -305,10 +317,61 @@ label
   margin-right 3%
   margin-top: 30px
   float: left
-  position: relative
+  display table
+  font-size 0
+
+  &.true
+    .newpiece__image
+      display table-cell
+      float none
+
+    .newpiece__image + .newpiece__info
+      display table-cell
+
+    .newpiece__info
+      position relative
+      vertical-align top
+      float none
+      width auto
+      padding-left: 30px
+      padding-right: 30px
+      height auto
+      min-height 200px
+      padding-bottom: 55px;
+
+      .newpiece__title
+        margin-top: 20px
+        left: auto
+        right: auto
+        position: static
+        display inline-block
+
+
+      .newpiece__date
+        margin-top: 30px
+        left: auto
+        right: auto
+        position: static
+        display inline-block
+
+      .bottom-line
+        font-size 14pt
+        position absolute
+        bottom: 20px;
+        left 30px
+
+        &.more
+          color red !important
+
+
+.link
+  display inline-block
 
 .newpiece__image
   float: left
+  width 200px
+  height 200px
+
 
 .newpiece__info
   position: relative
@@ -461,3 +524,7 @@ label
 .socials_footer
   margin 0
   float: left
+
+.section-title
+  font-size 26pt
+  text-align center

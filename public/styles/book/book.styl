@@ -1,0 +1,187 @@
+.book-info
+  padding-bottom 40px
+
+  .column-wrapper
+    font-size 0
+    display table
+    width 100%
+
+    .column
+      display: table-cell
+      width 50%
+
+      &.one
+        padding-right 20px
+
+      &.two
+        padding-left 20px
+        vertical-align bottom
+
+        .newpiece-wrapp
+          margin-top 20px
+
+
+.book-application
+  .category
+    font-size 14pt
+    color darkbordergray
+
+  .slogan
+    font-size 25pt
+    margin-top 20px
+
+  .title
+    font-size 17pt
+    text-decoration underline
+    color red
+    margin-top 20px
+
+  .chose-book-type
+    width 300px
+    border 2px solid red
+    border-radius 3px
+    margin-top 50px
+
+    .type-toggler
+      display table
+      font-size 0
+      width 100%
+      table-layout fixed
+      border-bottom 2px solid red
+
+      .item
+        display table-cell
+
+        &:first-child
+          border-right 2px solid red
+
+        .link
+          display inline-block
+          width 100%
+          text-align center
+          font-size 12pt
+          line-height: 50px
+
+          &.active
+            background palered
+            color #fff !important
+
+
+    .price-block
+      .item
+        line-height 80px
+        font-size 15pt
+        padding 0 30px
+
+        .price-wrapper
+          float left
+
+          .price
+            font-size 25pt
+            color: #000
+            top: -3px;
+            position: relative;
+
+          .currency
+            vertical-align top
+
+        .by-link-wrapper
+          float right
+
+        .by-link
+          color red !important
+          text-decoration underline !important
+
+          &:hover
+            text-decoration none !important
+
+.book-preview
+  padding-top 80px
+  padding-bottom 40px
+  background url("../images/bg-book-preview.png") no-repeat center
+  background-size cover
+  text-align center
+
+  .book-icon
+    display inline-block
+    height 600px
+
+.book-review
+  padding 50px 0
+
+  .review-list
+    margin-top 20px
+    overflow hidden
+
+.book-description
+  background url("../images/bg-book-description.png") no-repeat center
+  background-size cover
+  padding 100px 0 50px
+
+  .column-wrapper
+    display table
+    font-size 0
+    width 100%
+
+    .column
+      display table-cell
+      vertical-align top
+      width 50%
+
+      &.one
+      .book-icon-wrapp
+        height 700px
+
+        .book-icon
+          height 700px
+          position: absolute;
+      &.two
+        .book-application
+          position relative
+          z-index 10
+
+          .category
+            color red
+
+.book-detail-info
+  background #fff
+  opacity .5
+  padding 20px
+  display inline-block
+  margin-top 80px
+
+  .item
+    margin-top 10px
+
+    .label,
+    .value
+      font-size 12pt
+
+.banner
+  background url("../images/bg-banner.png") no-repeat center
+  background-size cover
+  text-align center
+  padding 150px 0 150px
+  position relative
+
+  .container
+    position relative
+    z-index 10
+
+  &:after
+    content: ''
+    position absolute
+    top 0
+    left 0
+    right 0
+    bottom 0
+    background rgba(0, 0, 0, 0.3)
+
+  .banner-title
+    font-size 25pt
+    line-height 100px
+    color #fff
+
+  .subscribal__button
+    margin-top 40px
+    border-left 1px solid #fff
