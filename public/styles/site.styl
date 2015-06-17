@@ -7,12 +7,21 @@
   src: url('../fonts/Lato-Regular.ttf') format("truetype");
 }
 
-.italic
-  font-style italic
+@font-face {
+  font-family: Lato-Italic;
+  src: url('../fonts/Lato-Italic.ttf') format("truetype");
+}
 
+@font-face {
+  font-family: Lato-Bold;
+  src: url('../fonts/Lato-Bold.ttf') format("truetype");
+}
 *
-  font-family: Lato
+  font-family: Lato !important
   outline none
+
+.italic
+  font-family: Lato-Italic !important
 
 a, button
   cursor: pointer !important

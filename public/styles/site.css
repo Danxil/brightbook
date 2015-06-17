@@ -196,6 +196,7 @@ table {
 }
 .book-info .column-wrapper .column.one {
   padding-right: 20px;
+  vertical-align: bottom;
 }
 .book-info .column-wrapper .column.two {
   padding-left: 20px;
@@ -278,13 +279,48 @@ table {
 .book-preview {
   padding-top: 80px;
   padding-bottom: 40px;
-  background: url("../images/bg-book-preview.png") no-repeat center;
+  background: url("../images/bg-book-preview.jpg") no-repeat center;
   background-size: cover;
   text-align: center;
 }
-.book-preview .book-icon {
+.book-preview .book-preview-plug {
+  position: relative;
+  display: inline-block;
+}
+.book-preview .bb-bookblock {
+  height: 536px;
+  width: 704px;
+  position: absolute;
+  top: 15px;
+  left: 63px;
+}
+.book-preview .book-preview-arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 80px;
+  margin-top: -62px;
+  color: #282828 !important;
+  transition: 0.5s;
+}
+.book-preview .book-preview-arrow:hover.prev {
+  left: -75px;
+}
+.book-preview .book-preview-arrow:hover.next {
+  right: -75px;
+}
+.prev {
+  left: -70px;
+}
+.next {
+  right: -70px;
+}
+.book-icon {
   display: inline-block;
   height: 600px;
+}
+.page-icon {
+  display: inline-block;
+  height: 536px;
 }
 .book-review {
   padding: 50px 0;
@@ -294,7 +330,7 @@ table {
   overflow: hidden;
 }
 .book-description {
-  background: url("../images/bg-book-description.png") no-repeat center;
+  background: url("../images/bg-book-description.jpg") no-repeat center;
   background-size: cover;
   padding: 100px 0 50px;
 }
@@ -371,12 +407,20 @@ table {
   font-family: Lato;
   src: url("../fonts/Lato-Regular.ttf") format("truetype");
 }
-.italic {
-  font-style: italic;
+@font-face {
+  font-family: Lato-Italic;
+  src: url("../fonts/Lato-Italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: Lato-Bold;
+  src: url("../fonts/Lato-Bold.ttf") format("truetype");
 }
 * {
-  font-family: Lato;
+  font-family: Lato !important;
   outline: none;
+}
+.italic {
+  font-family: Lato-Italic !important;
 }
 a,
 button {
