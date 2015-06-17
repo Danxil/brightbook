@@ -299,14 +299,23 @@ table {
   top: 50%;
   font-size: 80px;
   margin-top: -62px;
-  color: #282828 !important;
   transition: 0.5s;
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+}
+.book-preview .book-preview-arrow.prev {
+  left: -60px;
+  border-right: 20px solid #282828;
+}
+.book-preview .book-preview-arrow.next {
+  right: -60px;
+  border-left: 20px solid #282828;
 }
 .book-preview .book-preview-arrow:hover.prev {
-  left: -75px;
+  left: -65px;
 }
 .book-preview .book-preview-arrow:hover.next {
-  right: -75px;
+  right: -65px;
 }
 .prev {
   left: -70px;
