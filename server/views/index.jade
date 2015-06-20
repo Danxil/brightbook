@@ -49,7 +49,14 @@ block main-content
            .h3 Больше
     .sub-menu(ng-class="{'sub-menu_visible': subMenuMarkers.loginVisible}")
         .container.categories
-           .h3 Войти к себе
+            div.login-form
+                .row
+                    .input-wrapp.login
+                        input.subscribal__input.input
+                .row
+                    .input-wrapp.pass
+                        input.subscribal__input.input(type="password")
+                        button.enter-btn
     .sub-menu(ng-class="{'sub-menu_visible': subMenuMarkers.searchVisible}")
         .container.categories
            .h3 Поиск

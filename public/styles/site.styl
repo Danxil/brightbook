@@ -1,6 +1,7 @@
 @import reset
 @import vars
 @import book
+@import cabinet
 
 @font-face {
   font-family: Lato;
@@ -25,7 +26,8 @@
 
 a, button
   cursor: pointer !important
-
+  background transparent
+  border none
 a
   color black !important
   text-decoration none !important
@@ -56,6 +58,7 @@ label
   z-index 1000
   border-bottom 1px solid bordergray
   padding-bottom 19px
+  height: 150px;
 
 .header__inner
   width: 1050px
@@ -100,6 +103,7 @@ label
   float: right
   list-style none
   margin-right: 20px
+  margin-top 15px
 
 .menu__item
   @extend .h6
@@ -537,3 +541,47 @@ label
 .section-title
   font-size 26pt
   text-align center
+
+.login-form
+  .row
+    margin-top 20px
+
+    .input-wrapp
+      display inline-block
+      position relative
+
+      &:before,
+      .enter-btn
+        content ''
+        width 30px
+        display inline-block
+        position absolute
+        left 10px
+        top 0
+        bottom 0
+        background-size contain
+        background-position center
+        background-repeat no-repeat
+
+      .enter-btn
+        left auto
+        right 10px
+
+      &.login
+        &:before
+          background-image url('../images/icons/message.png')
+
+      &.pass
+        &:before
+          background-image url('../images/icons/key.png')
+
+        .enter-btn
+          background-image url('../images/icons/enter.png')
+
+    &:first-child
+      margin-top 0
+
+    .subscribal__input
+      background #fff
+      padding-left 50px
+      padding-right 50px

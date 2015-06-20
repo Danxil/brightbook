@@ -412,6 +412,69 @@ table {
   margin-top: 40px;
   border-left: 1px solid #fff;
 }
+.book-list {
+  font-size: 0;
+  position: relative;
+  width: 865px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -50px;
+  margin-bottom: 100px;
+}
+.book-list .item {
+  display: inline-block;
+  width: 33.333%;
+  margin-top: 100px;
+}
+.book-list .item.shelf:before {
+  content: '';
+  background-image: url("../images/icons/shelf.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  left: -50px;
+  right: -50px;
+  height: 100px;
+  display: inline-block;
+  position: absolute;
+  margin-top: 125px;
+}
+.book-list .book-block {
+  margin: 0 auto;
+  width: 180px;
+  position: relative;
+  text-align: center;
+}
+.book-list .book-block .book-icon {
+  width: 100%;
+  height: auto;
+}
+.book-list .book-block .read-link {
+  background: rgba(255,0,0,0.5);
+  font-size: 18px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  padding: 10px;
+  color: #fff !important;
+  transition: 0.9s;
+}
+.book-list .book-block .read-link:hover {
+  background: rgba(255,0,0,0.6);
+}
+.book-list .book-block .epub-link {
+  position: absolute;
+  font-size: 16px;
+  left: 20px;
+  bottom: -35px;
+}
+.book-list .book-block .pdf-link {
+  position: absolute;
+  font-size: 16px;
+  left: 110px;
+  bottom: -35px;
+}
 @font-face {
   font-family: Lato;
   src: url("../fonts/Lato-Regular.ttf") format("truetype");
@@ -434,6 +497,8 @@ table {
 a,
 button {
   cursor: pointer !important;
+  background: transparent;
+  border: none;
 }
 a {
   color: #000 !important;
@@ -464,6 +529,7 @@ label {
   z-index: 1000;
   border-bottom: 1px solid #e5e5e5;
   padding-bottom: 19px;
+  height: 150px;
 }
 .header__inner {
   width: 1050px;
@@ -511,6 +577,7 @@ label {
   float: right;
   list-style: none;
   margin-right: 20px;
+  margin-top: 15px;
 }
 .menu__item {
   display: inline-block;
@@ -932,4 +999,45 @@ label {
 .section-title {
   font-size: 26pt;
   text-align: center;
+}
+.login-form .row {
+  margin-top: 20px;
+}
+.login-form .row .input-wrapp {
+  display: inline-block;
+  position: relative;
+}
+.login-form .row .input-wrapp:before,
+.login-form .row .input-wrapp .enter-btn {
+  content: '';
+  width: 30px;
+  display: inline-block;
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.login-form .row .input-wrapp .enter-btn {
+  left: auto;
+  right: 10px;
+}
+.login-form .row .input-wrapp.login:before {
+  background-image: url("../images/icons/message.png");
+}
+.login-form .row .input-wrapp.pass:before {
+  background-image: url("../images/icons/key.png");
+}
+.login-form .row .input-wrapp.pass .enter-btn {
+  background-image: url("../images/icons/enter.png");
+}
+.login-form .row:first-child {
+  margin-top: 0;
+}
+.login-form .row .subscribal__input {
+  background: #fff;
+  padding-left: 50px;
+  padding-right: 50px;
 }

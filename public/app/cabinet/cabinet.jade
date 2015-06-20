@@ -1,0 +1,24 @@
+.cabinet
+    .container
+        p.section-title Приобретенные Вами книги
+        ul.book-list
+            li.item(data-ng-repeat="item in boughtBooks" data-ng-class="{shelf: $index == 0 || $index % 3 == 0}")
+                .book-block
+                    img.book-icon(data-ng-src="{{item.icon}}")
+                    a.read-link читать
+                    a.epub-link(data-ng-src="item.epubLink") &#8595; epub
+                    a.pdf-link(data-ng-src="item.pdfLink") &#8595; pdf
+        p.section-title Желаемые книги
+        ul.book-list
+            li.item(data-ng-repeat="item in wantedBooks" data-ng-class="{shelf: $index == 0 || $index % 3 == 0}")
+                .book-block
+                    img.book-icon(data-ng-src="{{item.icon}}")
+                    a.read-link к книге
+                    a.epub-link(data-ng-src="item.epubLink")
+                    a.pdf-link(data-ng-src="item.pdfLink")
+
+.banner
+    .container
+        p.banner-title Мы ценим Вашу лояльность!
+        p.banner-title Книги из Вашей любимой серии "Бизнес" со скидкой -20%
+        button.subscribal__button к разделу

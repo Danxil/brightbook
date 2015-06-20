@@ -16,4 +16,8 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             templateUrl: '/partials/book/book',
             controller: 'bbBookCtrl'
         })
+        .when('/cabinet', {
+            templateUrl: '/partials/cabinet/cabinet',
+            controller: 'bbCabinetCtrl'
+        })
 });
