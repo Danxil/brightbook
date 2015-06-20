@@ -297,25 +297,25 @@ table {
 .book-preview .book-preview-arrow {
   position: absolute;
   top: 50%;
-  font-size: 80px;
   margin-top: -62px;
   transition: 0.5s;
-  border-top: 60px solid transparent;
-  border-bottom: 60px solid transparent;
+  width: 100px;
+  height: 100px;
+  background-size: contain;
 }
 .book-preview .book-preview-arrow.prev {
-  left: -60px;
-  border-right: 20px solid #282828;
+  left: -100px;
+  background-image: url("../images/icons/left-arrow.png");
 }
 .book-preview .book-preview-arrow.next {
-  right: -60px;
-  border-left: 20px solid #282828;
+  right: -100px;
+  background-image: url("../images/icons/right-arrow.png");
 }
 .book-preview .book-preview-arrow:hover.prev {
-  left: -65px;
+  left: -105px;
 }
 .book-preview .book-preview-arrow:hover.next {
-  right: -65px;
+  right: -105px;
 }
 .prev {
   left: -70px;
@@ -339,7 +339,7 @@ table {
   overflow: hidden;
 }
 .book-description {
-  background: url("../images/bg-book-description.jpg") no-repeat center;
+  background: url("../images/books/book2/book-2.jpg") no-repeat center;
   background-size: cover;
   padding: 100px 0 50px;
 }
