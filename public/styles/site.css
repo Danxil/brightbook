@@ -198,6 +198,9 @@ table {
   padding-right: 20px;
   vertical-align: bottom;
 }
+.book-info .column-wrapper .column.one .book-img {
+  max-width: 600px;
+}
 .book-info .column-wrapper .column.two {
   padding-left: 20px;
   vertical-align: bottom;
@@ -339,7 +342,7 @@ table {
   overflow: hidden;
 }
 .book-description {
-  background: url("../images/books/book2/book-2.jpg") no-repeat center;
+  background: url("../images/books/1/book-2.jpg") no-repeat center;
   background-size: cover;
   padding: 100px 0 50px;
 }

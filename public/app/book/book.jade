@@ -2,21 +2,21 @@
    .container
       .column-wrapper
          .column.one
-            img(src="images/books/book-1.png")
+            img.book-img(src="/images/books/1/book-1.png")
             .newpiece-wrapp
                .newpiece.true
-                  img(src="/images/books/portret-2.png").newpiece__image
+                  img(src="/images/books/1/avtor.jpg").newpiece__image
                   .newpiece__info
-                     .newpiece__date Тал Бен-Шахар
+                     .newpiece__date О авторе
                      .newpiece__title(data-ng-init="aboutAuthorLimit = 80") {{aboutAuthor | maxSymbols:aboutAuthorLimit}}
                      a.link.more.bottom-line(data-ng-show="aboutAuthorLimit < 1000000" data-ng-click="aboutAuthorLimit = aboutAuthorLimit * 1000000") развернуть &#8595;
                      a.link.more.bottom-line(data-ng-show="aboutAuthorLimit > 1000000" data-ng-click="aboutAuthorLimit = aboutAuthorLimit / 1000000") свернуть &#8593;
                .clearfix
          .column.two
             .book-application
-               p.category Раздел "Новинки"
-               p.slogan Что ты выберешь?
-               p.title Тал Бен-Шахар
+               p.category Раздел "Политика"
+               p.slogan Межигорский Синдром. Диагноз власти Виктора Януковича
+               p.title Сергей Лещенко
                .chose-book-type
                   ul.type-toggler(data-tabs="")
                      li.item
@@ -43,7 +43,7 @@
                .newpiece.true
                   .newpiece__info
                      .newpiece__date О книге
-                     .newpiece__title(data-ng-init="aboutBookLimit = 400") {{aboutBook | maxSymbols:aboutBookLimit}}
+                     .newpiece__title(data-ng-init="aboutBookLimit = 400" ng-bind-html="aboutBook | maxSymbols:aboutBookLimit")
                      a.link.more.bottom-line(data-ng-show="aboutBookLimit < 1000000" data-ng-click="aboutBookLimit = aboutBookLimit * 1000000") развернуть &#8595;
                      a.link.more.bottom-line(data-ng-show="aboutBookLimit > 1000000" data-ng-click="aboutBookLimit = aboutBookLimit / 1000000") свернуть &#8593;
                .clearfix
@@ -51,18 +51,18 @@
 .book-preview
    .container
       .book-preview-plug
-         img.book-icon(src="images/book-plug.png")
+         img.book-icon(src="/images/book-plug.png")
          a.book-preview-arrow.prev(data-book-preview-arrow-prev="" href="#preview-1")
          a.book-preview-arrow.next(data-book-preview-arrow-next="" href="#preview-1")
          .bb-bookblock(data-book-preview="" id="preview-1")
             .bb-item
-               img.page-icon(src="images/books/05.png")
+               img.page-icon(src="/images/books/1/page-1.png")
             .bb-item
-               img.page-icon(src="images/books/05.png")
+               img.page-icon(src="/images/books/1/page-2.png")
             .bb-item
-               img.page-icon(src="images/books/05.png")
+               img.page-icon(src="/images/books/1/page-3.png")
             .bb-item
-               img.page-icon(src="images/books/05.png")
+               img.page-icon(src="/images/books/1/page-4.png")
 
       .subscribal__form
          input.subscribal__input(type="text", placeholder="Получитеглаву на ваш e-mail")
@@ -72,38 +72,22 @@
    .container
       p.section-title Отзывы о книге
       .review-list
-         .newpiece.true
-            img(src="/images/books/lady-small.jpg").newpiece__image
+         .newpiece.true(data-ng-repeat="review in reviews")
+            img(data-ng-src="{{review.avatar}}").newpiece__image
             .newpiece__info
-               span.newpiece__title.italic Тал Бен-Шахар уже больше 10 лет изучает и преподает тему счастья. Тал Бен-Шахар уже больше 10 лет изучает и преподает тему счастья.
-               .bottom-line.author Гретхен Рубин
-         .newpiece.true
-            img(src="/images/books/lady-small-2.png").newpiece__image
-            .newpiece__info
-               span.newpiece__title.italic Тал Бен-Шахар уже больше 10 лет изучает и преподает тему счастья. Тал Бен-Шахар уже больше 10 лет изучает и преподает тему счастья.
-               .bottom-line.author Марси Шимофф
-         .newpiece.true
-            img(src="/images/books/lady-small-2.png").newpiece__image
-            .newpiece__info
-               span.newpiece__title.italic Тал Бен-Шахар уже больше 10 лет изучает и преподает тему счастья.
-               .bottom-line.author Марси Шимофф
-         .newpiece.true
-            img(src="/images/books/lady-small.jpg").newpiece__image
-            .newpiece__info
-               span.newpiece__title.italic Тал Бен-Шахар уже больше 10 лет изучает и преподает тему счастья.
-               .bottom-line.author Гретхен Рубин
+               span.newpiece__title.italic {{review.text}}
+               .bottom-line.author {{review.author}}
 
 .book-description
    .container
       .column-wrapper
          .column.one
             .book-icon-wrapp
-               img.book-icon(src="images/books/book-3.png")
          .column.two
             .book-application
-               p.category Раздел "Новинки"
+               p.category Раздел "Политика"
                p.slogan Что ты выберешь?
-               p.title Тал Бен-Шахар
+               p.title Сергей Лещенко
                .chose-book-type
                   ul.type-toggler(data-tabs="")
                      li.item

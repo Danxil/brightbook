@@ -12,16 +12,13 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             templateUrl: '/partials/main/main',
             controller: 'bbMainCtrl'
         })
-        .when('/book', {
-            templateUrl: '/partials/book/book',
-            controller: 'bbBookCtrl'
-        })
         .when('/cabinet', {
             templateUrl: '/partials/cabinet/cabinet',
             controller: 'bbCabinetCtrl'
         })
-        .when('/book2', {
-            templateUrl: '/partials/book2/book',
-            controller: 'bbBook2Ctrl'
+        .when('/category/:categoryId/book/:bookId', {
+            templateUrl: '/partials/book/book',
+            controller: 'bbBookCtrl'
         })
+        .otherwise('/')
 });
