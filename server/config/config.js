@@ -10,7 +10,11 @@ module.exports = {
         emailHost: 'smtp.mandrillapp.com',
         emailPort: '587',
         fromEmail: 'eriendel97@gmail.com',
-        managerEmail: 'umnick.jo@mail.ru'
+        managerEmail: 'umnick.jo@mail.ru',
+        dbHost: 'localhost',
+        db: 'brightbook',
+        dbUser: 'root',
+        dbPass: '1'
     },
     production: {
         rootPath: rootPath,
