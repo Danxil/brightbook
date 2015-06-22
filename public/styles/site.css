@@ -208,6 +208,13 @@ table {
 .book-info .column-wrapper .column.two .newpiece-wrapp {
   margin-top: 20px;
 }
+.book-application {
+  display: inline-block;
+}
+.book-application.with-bg {
+  background: rgba(255,255,255,0.7);
+  padding: 30px;
+}
 .book-application .category {
   font-size: 14pt;
   color: #b7b7b7;
@@ -342,7 +349,8 @@ table {
   overflow: hidden;
 }
 .book-description {
-  background: url("../images/books/1/book-2.jpg") no-repeat center;
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
   padding: 100px 0 50px;
 }
@@ -385,35 +393,6 @@ table {
 .book-detail-info .item .label,
 .book-detail-info .item .value {
   font-size: 12pt;
-}
-.banner {
-  background: url("../images/bg-banner.png") no-repeat center;
-  background-size: cover;
-  text-align: center;
-  padding: 150px 0 150px;
-  position: relative;
-}
-.banner .container {
-  position: relative;
-  z-index: 10;
-}
-.banner:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0,0,0,0.3);
-}
-.banner .banner-title {
-  font-size: 25pt;
-  line-height: 100px;
-  color: #fff;
-}
-.banner .subscribal__button {
-  margin-top: 40px;
-  border-left: 1px solid #fff;
 }
 .book-list {
   font-size: 0;
@@ -478,6 +457,29 @@ table {
   left: 110px;
   bottom: -35px;
 }
+.category-books {
+  padding: 50px 0;
+  background: url("../images/category-bg.jpg");
+  background-size: cover;
+}
+.category-books-list {
+  font-size: 0;
+  margin-top: 30px;
+  text-align: center;
+}
+.category-books-list .item {
+  margin: 20px;
+  max-width: 300px;
+  display: inline-block;
+}
+.category-books-list .item .link {
+  display: inline-block;
+  width: 100%;
+}
+.category-books-list .item .link .image {
+  width: 100%;
+  display: inline-block;
+}
 @font-face {
   font-family: Lato;
   src: url("../fonts/Lato-Regular.ttf") format("truetype");
@@ -517,6 +519,9 @@ body {
 }
 label {
   cursor: pointer;
+}
+.go-up {
+  margin-top: -45px;
 }
 .header-false {
   height: 150px;
@@ -569,7 +574,7 @@ label {
   background-color: #fff;
   background-image: url("../images/logo.png");
   height: 45px;
-  width: 303px;
+  width: 310px;
   display: block;
   float: left;
   -webkit-background-size: cover;
@@ -1043,4 +1048,33 @@ label {
   background: #fff;
   padding-left: 50px;
   padding-right: 50px;
+}
+.banner-title {
+  font-size: 25pt;
+  line-height: 100px;
+  color: #fff;
+}
+.banner {
+  background: url("../images/bg-banner.png") no-repeat center;
+  background-size: cover;
+  text-align: center;
+  padding: 150px 0 150px;
+  position: relative;
+}
+.banner .container {
+  position: relative;
+  z-index: 10;
+}
+.banner:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.3);
+}
+.banner .subscribal__button {
+  margin-top: 40px;
+  border-left: 1px solid #fff;
 }

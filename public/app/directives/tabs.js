@@ -1,37 +1,39 @@
-app.directive("tabs", function() {
+app.directive("tabs", function($timeout) {
     return function($scope, elem, attrs) {
-        var togglers = elem.find('[data-tab-toggler]')
+        $timeout(function () {
+            var togglers = elem.find('[data-tab-toggler]')
 
-        var activeElem = null
-        var activeToggler = null
+            var activeElem = null
+            var activeToggler = null
 
-        _.each(togglers, function(elem) {
-            elem = $(elem)
+            _.each(togglers, function(elem) {
+                elem = $(elem)
 
-            var currBlock = $(elem.attr('href'))
-            currBlock.hide()
+                var currBlock = $(elem.attr('href'))
+                currBlock.hide()
 
-            if (elem.hasClass('active')) {
-                activeElem = $(elem.attr('href'))
-                activeElem.show()
+                if (elem.hasClass('active')) {
+                    activeElem = $(elem.attr('href'))
+                    activeElem.show()
 
-                activeToggler = elem
-            }
+                    activeToggler = elem
+                }
 
-            elem.click(function(e) {
-                e.preventDefault()
+                elem.click(function(e) {
+                    e.preventDefault()
 
-                if (activeElem)
-                    activeElem.hide()
+                    if (activeElem)
+                        activeElem.hide()
 
-                if (activeToggler)
-                    activeToggler.removeClass('active')
+                    if (activeToggler)
+                        activeToggler.removeClass('active')
 
-                activeToggler = elem
-                activeElem = $(elem.attr('href'))
+                    activeToggler = elem
+                    activeElem = $(elem.attr('href'))
 
-                activeElem.show()
-                activeToggler.addClass('active')
+                    activeElem.show()
+                    activeToggler.addClass('active')
+                })
             })
         })
     };

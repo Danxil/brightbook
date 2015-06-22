@@ -1,52 +1,52 @@
-angular.module('app').controller('bbCabinetCtrl', function ($scope, $http, $rootScope) {
-    $scope.boughtBooks = [
+angular.module('app').controller('bbCategoryCtrl', function ($scope, $http, $rootScope) {
+    $scope.books = [
         {
-            icon: 'http://www.jpl.nasa.gov/spaceimages/images/mediumsize/PIA17011_ip.jpg',
-            pdfLink: '#',
-            epubLink: '#'
+            id: 1,
+            image: '/images/books/1/book-1.png',
+            bookBanner: '/images/books/desc-book-bg.jpg',
+            category: 'Книга в подарок женщине',
+            title: 'Как разговаривать с кем угодно',
+            author: 'Марк Роудз',
+            price: {
+                analog: '310',
+                ebook: '210'
+            }
         },
         {
-            icon: 'http://www.jpl.nasa.gov/spaceimages/images/mediumsize/PIA17011_ip.jpg',
-            pdfLink: '#',
-            epubLink: '#'
+            id: 2,
+            image: '/images/books/1/book-1.png',
+            bookBanner: '/images/books/desc-book-bg.jpg',
+            category: 'Книга в подарок женщине',
+            title: 'Как разговаривать с кем угодно',
+            author: 'Марк Роудз',
+            price: {
+                analog: '310',
+                ebook: '210'
+            }
         },
         {
-            icon: 'http://www.jpl.nasa.gov/spaceimages/images/mediumsize/PIA17011_ip.jpg',
-            pdfLink: '#',
-            epubLink: '#'
+            id: 3,
+            image: '/images/books/1/book-1.png',
+            bookBanner: '/images/books/desc-book-bg.jpg',
+            category: 'Книга в подарок женщине',
+            title: 'Как разговаривать с кем угодно',
+            author: 'Марк Роудз',
+            price: {
+                analog: '310',
+                ebook: '210'
+            }
         },
         {
-            icon: 'http://www.jpl.nasa.gov/spaceimages/images/mediumsize/PIA17011_ip.jpg',
-            pdfLink: '#',
-            epubLink: '#'
-        },
-        {
-            icon: 'http://www.jpl.nasa.gov/spaceimages/images/mediumsize/PIA17011_ip.jpg',
-            pdfLink: '#',
-            epubLink: '#'
-        },
-        {
-            icon: 'http://www.jpl.nasa.gov/spaceimages/images/mediumsize/PIA17011_ip.jpg',
-            pdfLink: '#',
-            epubLink: '#'
-        },
-        {
-            icon: 'http://www.jpl.nasa.gov/spaceimages/images/mediumsize/PIA17011_ip.jpg',
-            pdfLink: '#',
-            epubLink: '#'
-        }
-    ]
-
-    $scope.wantedBooks = [
-        {
-            icon: 'http://www.jpl.nasa.gov/spaceimages/images/mediumsize/PIA17011_ip.jpg',
-            pdfLink: '#',
-            epubLink: '#'
-        },
-        {
-            icon: 'http://www.jpl.nasa.gov/spaceimages/images/mediumsize/PIA17011_ip.jpg',
-            pdfLink: '#',
-            epubLink: '#'
+            id: 4,
+            image: '/images/books/1/book-1.png',
+            bookBanner: '/images/books/desc-book-bg.jpg',
+            category: 'Книга в подарок женщине',
+            title: 'Как разговаривать с кем угодно',
+            author: 'Марк Роудз',
+            price: {
+                analog: '310',
+                ebook: '210'
+            }
         }
     ]
 });

@@ -1,71 +1,42 @@
-.slider
-    .slider__left-side
-        img(src="/images/books/great-red.jpg")
-    .slider__right-side
-        img(src="/images/books/lady.png")
-        .slider__text-small События
-        .slider__text-big Книжный аперитив с Ириной Славинской
-.books-list
+.category-books.go-up
     .container
-        .book(ng-repeat="book in books", ng-mouseover="switchBookImg(book)", ng-mouseout="switchBookImg(book)")
-            img.book__img(src="{{book.img}}")
-            .book__details
-                .book__title {{book.title}}
-                .book__author {{book.author}}
-                a.book__more подробней →
-.news
+        .banner-title.text-center Политика
+        ul.category-books-list
+            li.item(data-ng-repeat="book in books")
+                a.link
+                    img.image(src="{{book.image}}")
+div(data-ng-repeat="book in books")
+    .book-description(style="background-image: url('{{book.bookBanner}}')")
+        .container
+            .column-wrapper
+                .column.two
+                    .book-application.with-bg
+                        p.category Раздел "{{book.category}}"
+                        p.slogan {{book.title}}
+                        p.title {{book.author}}
+                        .chose-book-type
+                            ul.type-toggler(data-tabs="")
+                                li.item
+                                    a.link.active(data-ng-href="#book-type-one-2-{{book.id}}" data-tab-toggler="") бумажная книга
+                                li.item
+                                    a.link(data-ng-href="#book-type-two-2-{{book.id}}" data-tab-toggler="") электронная
+                            .price-block
+                                .item(id="book-type-one-2-{{book.id}}")
+                                    span.price-wrapper
+                                        span.price {{book.price.analog}}&nbsp;
+                                        span.currency гривен
+                                    .by-link-wrapper
+                                        a.by-link купить
+                                    .clearfix
+                                .item(id="book-type-two-2-{{book.id}}")
+                                    span.price-wrapper
+                                        span.price {{book.price.ebook}}&nbsp;
+                                        span.currency гривен
+                                    .by-link-wrapper
+                                        a.by-link купить
+                                    .clearfix
+.banner
     .container
-        .news__title Новости
-        .news__list
-            .newpiece
-                img(src="/images/books/lady-small.jpg").newpiece__image
-                .newpiece__info
-                    .newpiece__date 22 мая
-                    a.newpiece__title Книжный аперитив с Ириной Славинской
-            .newpiece
-                img(src="/images/books/lady-small-2.png").newpiece__image
-                .newpiece__info
-                    .newpiece__date 22 мая
-                    a.newpiece__title Книжный аперитив с Ириной Славинской
-            .newpiece
-                img(src="/images/books/lady-small-2.png").newpiece__image
-                .newpiece__info
-                    .newpiece__date 22 мая
-                    a.newpiece__title Книжный аперитив с Ириной Славинской
-            .newpiece
-                img(src="/images/books/lady-small.jpg").newpiece__image
-                .newpiece__info
-                    .newpiece__date 22 мая
-                    a.newpiece__title Книжный аперитив с Ириной Славинской
-.subscribal
-    .subscribal__title Получайте информацию о наших новинках первыми!
-    .subscribal__form
-        input.subscribal__input(type="text", placeholder="введите Ваш электронный адрес")
-        button.subscribal__button отправить →
-.container
-    .feedback
-        .feedback__inner
-            .row
-                .feedback__title Напишите нам
-                .feedback__rect
-                .feedback__square
-            .row
-                .col-lg-4
-                    .row
-                        label(for="feedbackSubject") Тема/Кому
-                        select(id="feedbackSubject")
-                            option Купить книги оптом
-                            option Хочу предложить свою книгу
-                            option В редакцию «Теплых историй»
-                            option Предложить сотрудничество
-                            option Вопросы по работе сайта
-                            option Ошибки или очепятки в книгах
-                            option Дмитрий Кириченко, издатель
-                    .row
-                        label(for="feedbackContact") Ваш контакт
-                        input(type="text", id="feedbackContact", placeholder="Телефон, скайп, почта...")
-                .col-lg-8
-                    label(for="feedbackMessage") Ваше сообщение
-                    textarea(id="feedbackMessage")
-            .row
-                button.feedback__submit отправить →
+        p.banner-title Мы ценим Вашу лояльность!
+        p.banner-title Книги из Вашей любимой серии "Бизнес" со скидкой -20%
+        button.subscribal__button к разделу

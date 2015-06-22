@@ -16,6 +16,10 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             templateUrl: '/partials/cabinet/cabinet',
             controller: 'bbCabinetCtrl'
         })
+        .when('/category/:categoryId', {
+            templateUrl: '/partials/category/category',
+            controller: 'bbCategoryCtrl'
+        })
         .when('/category/:categoryId/book/:bookId', {
             templateUrl: '/partials/book/book',
             controller: 'bbBookCtrl'

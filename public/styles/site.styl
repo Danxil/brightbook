@@ -2,6 +2,7 @@
 @import vars
 @import book
 @import cabinet
+@import category
 
 @font-face {
   font-family: Lato;
@@ -41,6 +42,9 @@ html, body
 
 label
   cursor: pointer
+
+.go-up
+  margin-top -45px
 
 //-----HEADER-----
 
@@ -92,7 +96,7 @@ label
   background-color: #fff
   background-image url("../images/logo.png")
   height 45px
-  width: 303px
+  width: 310px
   display: block
   float: left
   -webkit-background-size: cover
@@ -585,3 +589,33 @@ label
       background #fff
       padding-left 50px
       padding-right 50px
+
+.banner-title
+  font-size 25pt
+  line-height 100px
+  color #fff
+
+
+.banner
+  background url("../images/bg-banner.png") no-repeat center
+  background-size cover
+  text-align center
+  padding 150px 0 150px
+  position relative
+
+  .container
+    position relative
+    z-index 10
+
+  &:after
+    content: ''
+    position absolute
+    top 0
+    left 0
+    right 0
+    bottom 0
+    background rgba(0, 0, 0, 0.3)
+
+  .subscribal__button
+    margin-top 40px
+    border-left 1px solid #fff
