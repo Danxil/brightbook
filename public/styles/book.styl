@@ -1,32 +1,33 @@
 .book-info
   padding-bottom 40px
 
-  .column-wrapper
-    font-size 0
-    display table
-    width 100%
+.column-wrapper-main
+  font-size 0
+  display table
+  width 100%
 
-    .column
-      display: table-cell
-      width 50%
+  .column
+    display: table-cell
+    width 50%
 
-      &.one
-        padding-right 20px
-        vertical-align bottom
+    &.one
+      padding-right 20px
+      vertical-align bottom
 
-        .book-img
-          max-width 600px
+      .book-img
+        max-width 500px
 
-      &.two
-        padding-left 20px
-        vertical-align bottom
+    &.two
+      padding-left 20px
+      vertical-align bottom
 
-        .newpiece-wrapp
-          margin-top 20px
+      .newpiece-wrapp
+        margin-top 20px
 
 
 .book-application
   display: inline-block;
+  width 400px
   &.with-bg
     background rgba(255, 255, 255, 0.7)
     padding 30px
@@ -47,7 +48,7 @@
 
   .chose-book-type
     width 300px
-    border 2px solid red
+    border 3px solid red
     border-radius 3px
     margin-top 50px
 
@@ -56,13 +57,13 @@
       font-size 0
       width 100%
       table-layout fixed
-      border-bottom 2px solid red
+      border-bottom 3px solid red
 
       .item
         display table-cell
 
         &:first-child
-          border-right 2px solid red
+          border-right 3px solid red
 
         .link
           display inline-block
@@ -174,30 +175,30 @@
   background-size cover
   padding 100px 0 50px
 
-  .column-wrapper
-    display table
-    font-size 0
-    width 100%
+.column-wrapper-main
+  display table
+  font-size 0
+  width 100%
 
-    .column
-      display table-cell
-      vertical-align top
-      width 50%
+  .column
+    display table-cell
+    vertical-align top
+    width 50%
 
-      &.one
-      .book-icon-wrapp
+    &.one
+    .book-icon-wrapp
+      height 700px
+
+      .book-icon
         height 700px
+        position: absolute;
+    &.two
+      .book-application
+        position relative
+        z-index 10
 
-        .book-icon
-          height 700px
-          position: absolute;
-      &.two
-        .book-application
-          position relative
-          z-index 10
-
-          .category
-            color red
+        .category
+          color red
 
 .book-detail-info
   background #fff

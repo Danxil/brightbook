@@ -1,11 +1,11 @@
-.category-books.go-up
+.desc.go-up
     .container
         .banner-title.text-center Политика
         ul.category-books-list
             li.item(data-ng-repeat="book in books")
-                a.link
+                a.link(href="{{'#book-id-' + book.id}}")
                     img.image(src="{{book.image}}")
-div(data-ng-repeat="book in books")
+div(data-ng-repeat="book in books" id="{{'book-id-' + book.id}}")
     .book-description(style="background-image: url('{{book.bookBanner}}')")
         .container
             .column-wrapper
@@ -35,6 +35,34 @@ div(data-ng-repeat="book in books")
                                     .by-link-wrapper
                                         a.by-link купить
                                     .clearfix
+    .desc
+        .container
+            .banner-title.text-center В чем ценность книнги "{{book.title}}"
+            .newpiece.true.full-with
+                img(data-ng-src="/images/books/portret.png").newpiece__image
+                .newpiece__info
+                    span.newpiece__title.italic(data-ng-bind-html="book.bookReason.text")
+                    .bottom-line.author {{book.bookReason.author}}
+            .column-wrapper-main
+                .column.one
+                    .newpiece-wrapp
+                        .newpiece.true
+                            img(src="/images/books/1/avtor.jpg").newpiece__image
+                            .newpiece__info
+                                .newpiece__date О авторе
+                                .newpiece__title(data-ng-init="aboutAuthorLimit = 80") {{book.aboutAuthor | maxSymbols:aboutAuthorLimit}}
+                                a.link.more.bottom-line(data-ng-show="aboutAuthorLimit < 1000000" data-ng-click="aboutAuthorLimit = aboutAuthorLimit * 1000000") развернуть &#8595;
+                                a.link.more.bottom-line(data-ng-show="aboutAuthorLimit > 1000000" data-ng-click="aboutAuthorLimit = aboutAuthorLimit / 1000000") свернуть &#8593;
+                        .clearfix
+                .column.two
+                    .newpiece-wrapp
+                        .newpiece.true
+                            .newpiece__info
+                                .newpiece__date О книге
+                                .newpiece__title(data-ng-init="aboutBookLimit = 400" ng-bind-html="book.aboutBook | maxSymbols:aboutBookLimit")
+                                a.link.more.bottom-line(data-ng-show="aboutBookLimit < 1000000" data-ng-click="aboutBookLimit = aboutBookLimit * 1000000") развернуть &#8595;
+                                a.link.more.bottom-line(data-ng-show="aboutBookLimit > 1000000" data-ng-click="aboutBookLimit = aboutBookLimit / 1000000") свернуть &#8593;
+                        .clearfix
 .banner
     .container
         p.banner-title Мы ценим Вашу лояльность!

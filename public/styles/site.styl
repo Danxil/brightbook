@@ -338,6 +338,20 @@ label
   font-size 0
 
   &.true
+    &.full-with
+      width 100%
+      margin-left auto
+      margin-right auto
+      float none
+
+      .newpiece__image
+        float none
+        width 220px
+        height 220px
+
+      .newpiece__info
+        width 100%
+
     .newpiece__image
       display table-cell
       float none
@@ -445,13 +459,16 @@ label
 
 .subscribal__button
   @extend .h6
-  color white
+  color white !important
   background: rgba(brightred, 0.55)
   display: inline-block
   border 1px solid #ffffff
   border-left 0
   padding 20px 40px
   transition 0.3s ease-in
+
+  &:hover
+    color #fff !important
 
 .subscribal__button:hover
   background: rgba(brightred, 0.75)
