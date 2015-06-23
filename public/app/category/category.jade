@@ -1,11 +1,11 @@
 .desc.go-up
     .container
-        .banner-title.text-center Политика
+        .banner-title.text-center {{category.title}}
         ul.category-books-list
-            li.item(data-ng-repeat="book in books")
-                a.link(href="{{'#book-id-' + book.id}}")
+            li.item(data-ng-repeat="book in category.books")
+                a.link(href="{{'#book-id-' + book.id}}" data-scroll-to-anchor)
                     img.image(src="{{book.image}}")
-div(data-ng-repeat="book in books" id="{{'book-id-' + book.id}}")
+div(data-ng-repeat="book in category.books" id="{{'book-id-' + book.id}}")
     .book-description(style="background-image: url('{{book.bookBanner}}')")
         .container
             .column-wrapper
@@ -35,6 +35,8 @@ div(data-ng-repeat="book in books" id="{{'book-id-' + book.id}}")
                                     .by-link-wrapper
                                         a.by-link купить
                                     .clearfix
+                        p.title
+                            a.title.color-red(data-ng-href="book/{{book.id}}") Пролистать книгу онлайн
     .desc
         .container
             .banner-title.text-center В чем ценность книнги "{{book.title}}"
@@ -48,7 +50,7 @@ div(data-ng-repeat="book in books" id="{{'book-id-' + book.id}}")
                     .banner-title.text-left Автор
                     .newpiece-wrapp
                         .newpiece.true
-                            img(src="/images/books/1/avtor.jpg").newpiece__image
+                            img(data-ng-src="{{book.authorAvatar}}").newpiece__image
                             .newpiece__info
                                 .newpiece__date О авторе
                                 .newpiece__title(data-ng-init="aboutAuthorLimit = 80") {{book.aboutAuthor | maxSymbols:aboutAuthorLimit}}
@@ -68,4 +70,4 @@ div(data-ng-repeat="book in books" id="{{'book-id-' + book.id}}")
     .container
         p.banner-title Мы ценим Вашу лояльность!
         p.banner-title Книги из Вашей любимой серии "Бизнес" со скидкой -20%
-        button.subscribal__button к разделу
+        button.subscribal__button(href=".main" data-scroll-to-anchor) к разделу

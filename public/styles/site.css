@@ -121,6 +121,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+.color-red {
+  color: #c20e1a !important;
+}
 .h1,
 .slider__text-big,
 .news__title,
@@ -486,6 +489,23 @@ table {
 }
 .desc .column-wrapper-main .column {
   height: auto;
+}
+.view-animate {
+  opacity: 1;
+}
+.view-animate.ng-enter,
+.view-animate.ng-leave {
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+.view-animate.ng-enter {
+  opacity: 0;
+}
+.view-animate.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+.view-animate.ng-leave.ng-leave-active {
+  display: none;
 }
 @font-face {
   font-family: Lato;
@@ -929,6 +949,10 @@ label {
   border-left: 0;
   padding: 20px 40px;
   transition: 0.3s ease-in;
+}
+.subscribal__button.single {
+  margin-top: 40px;
+  border-left: 1px solid #fff;
 }
 .subscribal__button:hover {
   color: #fff !important;
