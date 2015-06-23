@@ -37,12 +37,13 @@ db.sequelize.sync().then(function () {
     proms.push(createGroup('user', 2))
 
     q.all(proms).then(function(results){
-        var admin = db.User.create({
+        var adminGroup = results[0]
+
+        db.User.create({
             login: 'admin',
             password: '1'
         }).then(function(result) {
-            console.log(results)
-            result[1].setUser(admin).then(function(){
+            adminGroup.setUser(result).then(function(){
                 app.listen(config.port);
                 console.log('Listening on port ' + config.port + '...');
             })
