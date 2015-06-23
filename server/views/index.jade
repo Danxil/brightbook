@@ -48,14 +48,14 @@ block main-content
            a.categories__item.categories__item_fancy(href="/category/13") В отпуск
     .sub-menu(ng-class="{'sub-menu_visible': subMenuMarkers.authorsVisible}")
         .container.categories
+           .h3 Авторы
+    .sub-menu(ng-class="{'sub-menu_visible': subMenuMarkers.moreVisible}")
+        .container.categories
             .container.categories
                 a.categories__item Где купить наши книги
                 a.categories__item Для авторов
                 a.categories__item Контакты
                 a.categories__item Об издательстве
-    .sub-menu(ng-class="{'sub-menu_visible': subMenuMarkers.moreVisible}")
-        .container.categories
-           .h3 Больше
     .sub-menu(ng-class="{'sub-menu_visible': subMenuMarkers.loginVisible}")
         .container.categories
             div.login-form
