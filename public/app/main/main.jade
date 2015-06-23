@@ -1,6 +1,6 @@
 .slider
     .slider__left-side
-        img(src="/images/books/great-red.jpg")
+        img(src="/images/books/1/book-1.png")
     .slider__right-side
         img(src="/images/books/lady.png")
         .slider__text-small События
@@ -12,7 +12,7 @@
             .book__details
                 .book__title {{book.title}}
                 .book__author {{book.author}}
-                a.book__more подробней →
+                a.book__more(data-ng-href="{{book.link}}") подробней →
 .news
     .container
         .news__title Новости

@@ -1,4 +1,4 @@
-angular.module('app').controller('bbGlobalCtrl', function ($scope, $rootScope, $document) {
+angular.module('app').controller('bbGlobalCtrl', function ($scope, $rootScope, $document, $timeout) {
     $scope.subMenuMarkers = {
         booksVisible: false,
         authorsVisible: false,
@@ -12,20 +12,41 @@ angular.module('app').controller('bbGlobalCtrl', function ($scope, $rootScope, $
 
         if(!onTop) {
             $document.scrollToElementAnimated(angular.element(document.getElementById('header-false'), null, 1000)).then(function () {
-                if(!stateBefore) {
-                    expandSubMenu(menuName, stateBefore);
-                }
+                $timeout(function() {
+                    if(!stateBefore) {
+                        expandSubMenu(menuName, stateBefore);
+                    }
+                }, 100)
             });
-        }else {
+        } else {
             expandSubMenu(menuName, stateBefore);
         }
     };
 
+    $rootScope.subMenuClose = function () {
+        expandSubMenu();
+
+        if(!$scope.$$phase)
+            $scope.$apply()
+    }
+
     var expandSubMenu = function (menuName, stateBefore) {
-            $scope.subMenuMarkers.booksVisible = menuName == 'books' ? !stateBefore : false;
-            $scope.subMenuMarkers.authorsVisible = menuName == 'authors' ? !stateBefore : false;
-            $scope.subMenuMarkers.moreVisible = menuName == 'more' ? !stateBefore : false;
-            $scope.subMenuMarkers.loginVisible = menuName == 'login' ? !stateBefore : false;
-            $scope.subMenuMarkers.searchVisible = menuName == 'search' ? !stateBefore : false;
+        $scope.subMenuMarkers.booksVisible = menuName == 'books' ? !stateBefore : false;
+        $scope.subMenuMarkers.authorsVisible = menuName == 'authors' ? !stateBefore : false;
+        $scope.subMenuMarkers.moreVisible = menuName == 'more' ? !stateBefore : false;
+        $scope.subMenuMarkers.loginVisible = menuName == 'login' ? !stateBefore : false;
+        $scope.subMenuMarkers.searchVisible = menuName == 'search' ? !stateBefore : false;
+
+        var menuOpen = false
+
+        _.each($scope.subMenuMarkers, function(item, key) {
+            if (item)
+                menuOpen = true
+        })
+
+        if (menuOpen)
+            $(window).bind('scroll', $scope.subMenuClose)
+        else
+            $(window).unbind('scroll', $scope.subMenuClose)
     }
 });

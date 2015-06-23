@@ -2,27 +2,32 @@ extends ../includes/layout
 
 block main-content
     .header-false#header-false
-    .header
-        .header__inner
-            .header__line
-                .socials
-                    a.socials__item.socials__fb
-                    a.socials__item.socials__tw
-                    a.socials__item.socials__inst
-                    a.socials__item.socials__pin
-            .header__line
-                a(href="/").logo
-                ul.menu
-                    li.menu__item
-                        a.menu__link(ng-click="subMenuOpen('books')", ng-class="{active: subMenuMarkers.booksVisible}") Книги
-                    li.menu__item
-                        a.menu__link(ng-click="subMenuOpen('authors')", ng-class="{active: subMenuMarkers.authorsVisible}") Авторы
-                    li.menu__item
-                        a.menu__link(ng-click="subMenuOpen('more')", ng-class="{active: subMenuMarkers.moreVisible}") Больше
-                    li.menu__item
-                        a.menu__link(ng-click="subMenuOpen('login')", ng-class="{active: subMenuMarkers.loginVisible}") Войти к себе
-                    li.menu__item(ng-click="subMenuOpen('search')")
-                        a.search-btn(ng-class="{active: subMenuMarkers.searchVisible}")
+    .header-wrapp
+        .header(data-transparent-header="transparentHeader")
+            .header__inner
+                .header__line
+                    .socials
+                        a.socials__item
+                            i.fa.fa-facebook-square
+                        a.socials__item
+                            i.fa.fa-twitter-square
+                        a.socials__item
+                            i.fa.fa-instagram
+                        a.socials__item
+                            i.fa.fa-pinterest-square
+                .header__line
+                    a(href="/").logo
+                    ul.menu
+                        li.menu__item
+                            a.menu__link(ng-click="subMenuOpen('books')", ng-class="{active: subMenuMarkers.booksVisible}") Книги
+                        li.menu__item
+                            a.menu__link(ng-click="subMenuOpen('authors')", ng-class="{active: subMenuMarkers.authorsVisible}") Авторы
+                        li.menu__item
+                            a.menu__link(ng-click="subMenuOpen('more')", ng-class="{active: subMenuMarkers.moreVisible}") Больше
+                        li.menu__item
+                            a.menu__link(ng-click="subMenuOpen('login')", ng-class="{active: subMenuMarkers.loginVisible}") Войти к себе
+                        li.menu__item(ng-click="subMenuOpen('search')")
+                            i.fa.fa-search
     .localization
         a.localization__btn.active РУС
         a.localization__btn УКР
@@ -60,7 +65,7 @@ block main-content
     .sub-menu(ng-class="{'sub-menu_visible': subMenuMarkers.searchVisible}")
         .container.categories
            .h3 Поиск
-    .main.view-animate(ng-view)
+    .main.view-animate(ng-view data-scroll-top)
     .container
         .footer.h6
             .row

@@ -202,7 +202,7 @@ table {
   vertical-align: bottom;
 }
 .column-wrapper-main .column.one .book-img {
-  max-width: 500px;
+  max-width: 450px;
 }
 .column-wrapper-main .column.two {
   padding-left: 20px;
@@ -232,6 +232,14 @@ table {
   text-decoration: underline;
   color: #c20e1a;
   margin-top: 20px;
+}
+.book-application .subscribal__button + .chose-book-type {
+  margin-top: 20px;
+}
+.book-application .subscribal__button {
+  margin-top: 50px;
+  width: 300px;
+  text-align: center;
 }
 .book-application .chose-book-type {
   width: 300px;
@@ -507,6 +515,62 @@ table {
 .view-animate.ng-leave.ng-leave-active {
   display: none;
 }
+@-moz-keyframes menu-scrolld {
+  from {
+    transform: rotateX(-90deg);
+    transform-origin: 0% 0%;
+    perspective: 3000px;
+    transform-style: preserve-3d;
+  }
+  to {
+    transform: rotateX(0deg);
+    transform-origin: 0% 0%;
+    perspective: 3000px;
+    transform-style: preserve-3d;
+  }
+}
+@-webkit-keyframes menu-scrolld {
+  from {
+    transform: rotateX(-90deg);
+    transform-origin: 0% 0%;
+    perspective: 3000px;
+    transform-style: preserve-3d;
+  }
+  to {
+    transform: rotateX(0deg);
+    transform-origin: 0% 0%;
+    perspective: 3000px;
+    transform-style: preserve-3d;
+  }
+}
+@-o-keyframes menu-scrolld {
+  from {
+    transform: rotateX(-90deg);
+    transform-origin: 0% 0%;
+    perspective: 3000px;
+    transform-style: preserve-3d;
+  }
+  to {
+    transform: rotateX(0deg);
+    transform-origin: 0% 0%;
+    perspective: 3000px;
+    transform-style: preserve-3d;
+  }
+}
+@keyframes menu-scrolld {
+  from {
+    transform: rotateX(-90deg);
+    transform-origin: 0% 0%;
+    perspective: 3000px;
+    transform-style: preserve-3d;
+  }
+  to {
+    transform: rotateX(0deg);
+    transform-origin: 0% 0%;
+    perspective: 3000px;
+    transform-style: preserve-3d;
+  }
+}
 @font-face {
   font-family: Lato;
   src: url("../fonts/Lato-Regular.ttf") format("truetype");
@@ -520,7 +584,6 @@ table {
   src: url("../fonts/Lato-Bold.ttf") format("truetype");
 }
 * {
-  font-family: Lato !important;
   outline: none;
 }
 .italic {
@@ -543,28 +606,49 @@ a:hover {
 html,
 body {
   height: 100%;
+  font-family: Lato, sans-serif;
 }
 label {
   cursor: pointer;
 }
-.go-up {
-  margin-top: -45px;
+body.transparent-header .header {
+  border-bottom-color: transparent;
+}
+body.transparent-header .main > div:first-child {
+  margin-top: -165px;
+  padding-top: 170px;
 }
 .header-false {
-  height: 150px;
+  height: 120px;
   width: 100%;
 }
-.header {
+.header-wrapp {
+  perspective: 3000px;
   top: 0;
   left: 0;
   right: 0;
-  position: fixed;
-  color: #c20e1a !important;
-  background: #fff;
+  position: absolute;
   z-index: 1000;
+}
+.header-wrapp.scrolled {
+  position: fixed;
+}
+.header-wrapp.scrolled .header {
+  background: #fff;
+  border-bottom-color: #e5e5e5 !important;
+  animation: menu-scrolld 2s;
+}
+.header-wrapp.no-scrolled .header {
+  animation: menu-no-scrolld 2s;
+}
+.header {
   border-bottom: 1px solid #e5e5e5;
   padding-bottom: 19px;
-  height: 150px;
+  background: transparent;
+  color: #c20e1a !important;
+  height: 120px;
+  width: 100%;
+  transition: background 0.5s;
 }
 .header__inner {
   width: 1050px;
@@ -577,13 +661,20 @@ label {
 }
 .socials {
   float: right;
-  margin: 40px 10px 0 0;
+  margin: 15px 10px 0 0;
 }
 .socials__item {
   width: 32px;
   height: 32px;
   margin-left: 5px;
   display: inline-block;
+}
+.socials__item .fa {
+  font-size: 20px;
+  color: #333;
+}
+.socials__item .fa:hover {
+  color: #c20e1a;
 }
 .socials__fb {
   background-image: url("../images/icons/fb.png");
@@ -598,7 +689,6 @@ label {
   background-image: url("../images/icons/pinterest.png");
 }
 .logo {
-  background-color: #fff;
   background-image: url("../images/logo.png");
   height: 45px;
   width: 310px;
@@ -617,6 +707,14 @@ label {
 .menu__item {
   display: inline-block;
   margin-left: 30px;
+}
+.menu__item .fa-search {
+  cursor: pointer;
+  font-size: 20px;
+  color: #333;
+}
+.menu__item .fa-search:hover {
+  color: #c20e1a;
 }
 .menu__item .menu__link {
   width: 12px;
@@ -645,6 +743,8 @@ label {
   background-image: url("../images/icons/search-red.png");
 }
 .sub-menu {
+  z-index: 555;
+  position: absolute;
   background: #f1f1f1;
   width: 100%;
   max-height: 0;
@@ -654,8 +754,10 @@ label {
   -ms-transition: 0.3s ease-in;
   -o-transition: 0.3s ease-in;
   transition: 0.3s ease-in;
+  opacity: 0;
 }
 .sub-menu_visible {
+  opacity: 1;
   max-height: 240px;
   border-bottom: 1px solid #e5e5e5;
   padding: 20px 0;
@@ -739,7 +841,6 @@ label {
   float: left;
   margin-left: 48px;
   position: relative;
-  cursor: pointer;
   width: 170px;
 }
 .book:first-child {
@@ -749,10 +850,10 @@ label {
   position: absolute;
   top: 0;
   width: 170px;
+  background: #fff;
 }
 .book__details {
   width: 100%;
-  margin-top: 150px;
   text-align: center;
   -webkit-transition: 0.3s ease-in;
   -moz-transition: 0.3s ease-in;
@@ -951,7 +1052,6 @@ label {
   transition: 0.3s ease-in;
 }
 .subscribal__button.single {
-  margin-top: 40px;
   border-left: 1px solid #fff;
 }
 .subscribal__button:hover {

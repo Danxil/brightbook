@@ -20,7 +20,6 @@
   src: url('../fonts/Lato-Bold.ttf') format("truetype");
 }
 *
-  font-family: Lato !important
   outline none
 
 .italic
@@ -40,30 +39,54 @@ a:hover
 
 html, body
   height: 100%
+  font-family: Lato, sans-serif
 
 label
   cursor: pointer
 
-.go-up
-  margin-top -45px
+body.transparent-header
+  .header
+    border-bottom-color transparent
+
+  .main
+    > div:first-child
+      margin-top -165px
+      padding-top 170px
 
 //-----HEADER-----
 
 .header-false
-  height: 150px
+  height: 120px
   width: 100%
 
-.header
+.header-wrapp
+  perspective: 3000px;
   top: 0;
   left: 0;
   right: 0;
-  position: fixed;
-  color red !important
-  background: #ffffff
+  position: absolute;
   z-index 1000
+
+  &.scrolled
+    position fixed
+
+    .header
+      background #fff
+      border-bottom-color bordergray !important
+      animation menu-scrolld 2s
+
+  &.no-scrolled
+    .header
+      animation menu-no-scrolld 2s
+
+.header
   border-bottom 1px solid bordergray
   padding-bottom 19px
-  height: 150px;
+  background: transparent
+  color red !important
+  height: 120px;
+  width: 100%;
+  transition background .5s
 
 .header__inner
   width: 1050px
@@ -76,13 +99,20 @@ label
 
 .socials
   float: right
-  margin: 40px 10px 0 0
+  margin: 15px 10px 0 0
 
 .socials__item
   width: 32px
   height: 32px
   margin-left: 5px;
   display: inline-block
+
+  .fa
+    font-size 20px
+    color: extradarkgray
+
+    &:hover
+      color: red
 
 .socials__fb
   background-image url("../images/icons/fb.png")
@@ -94,7 +124,6 @@ label
   background-image url("../images/icons/pinterest.png")
 
 .logo
-  background-color: #fff
   background-image url("../images/logo.png")
   height 45px
   width: 310px
@@ -114,6 +143,14 @@ label
   @extend .h6
   display: inline-block
   margin-left 30px
+
+  .fa-search
+    cursor pointer
+    font-size 20px
+    color extradarkgray
+    
+    &:hover
+      color: red
 
 .menu__item .menu__link
   width: 12px
@@ -143,6 +180,8 @@ label
 //-----SUBMENU-----
 
 .sub-menu
+  z-index 555
+  position absolute
   background lightergray
   width: 100%
   max-height 0
@@ -152,8 +191,10 @@ label
   -ms-transition: 0.3s ease-in
   -o-transition: 0.3s ease-in
   transition: 0.3s ease-in
+  opacity 0
 
 .sub-menu_visible
+  opacity 1
   max-height 240px
   border-bottom 1px solid bordergray
   padding 20px 0
@@ -251,7 +292,6 @@ label
   float: left
   margin-left 48px
   position: relative
-  cursor: pointer
   width: 170px
 
 .book:first-child
@@ -261,10 +301,10 @@ label
   position absolute
   top 0
   width: 170px
+  background #fff
 
 .book__details
   width: 100%
-  margin-top: 150px
   text-align: center
   -webkit-transition: 0.3s ease-in
   -moz-transition: 0.3s ease-in
@@ -469,7 +509,6 @@ label
   transition 0.3s ease-in
 
   &.single
-    margin-top: 40px;
     border-left: 1px solid #fff
 
   &:hover

@@ -30,11 +30,11 @@ app.config(function ($routeProvider, $locationProvider) {
                                 {
                                     id: 1,
                                     image: '/images/books/1/book-1.png',
-                                    category: 'Книга в подарок женщине',
+                                    category: 'Политика',
                                     categoryId: '1',
                                     bookBanner: '/images/books/desc-book-bg.jpg',
-                                    title: 'Как разговаривать с кем угодно',
-                                    author: 'Марк Роудз',
+                                    title: 'Межигорский Синдром. Диагноз власти Виктора Януковича',
+                                    author: 'Сергей Лещенко',
                                     authorAvatar: '/images/books/1/avtor.jpg',
                                     price: {
                                         analog: '310',
@@ -218,9 +218,18 @@ app.config(function ($routeProvider, $locationProvider) {
 });
 
 app.run(function ($rootScope, $location) {
+    $rootScope.transparentHeader = false
+
+    $rootScope.$on("$routeChangeSuccess", function () {
+        $rootScope.transparentHeader = false
+
+        if ($rootScope.subMenuClose)
+            $rootScope.subMenuClose()
+    })
+
     $rootScope.$on("$routeChangeError", function () {
         console.log("failed to change routes");
 
         $location.path('/')
-    });
+    })
 })

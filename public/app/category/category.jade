@@ -1,4 +1,4 @@
-.desc.go-up
+.desc
     .container
         .banner-title.text-center {{category.title}}
         ul.category-books-list
@@ -14,6 +14,7 @@ div(data-ng-repeat="book in category.books" id="{{'book-id-' + book.id}}")
                         p.category Раздел "{{book.category}}"
                         p.slogan {{book.title}}
                         p.title {{book.author}}
+                        a.subscribal__button.single(data-ng-href="book/{{book.id}}") Пролистать книгу онлайн
                         .chose-book-type
                             ul.type-toggler(data-tabs="")
                                 li.item
@@ -35,8 +36,6 @@ div(data-ng-repeat="book in category.books" id="{{'book-id-' + book.id}}")
                                     .by-link-wrapper
                                         a.by-link купить
                                     .clearfix
-                        p.title
-                            a.title.color-red(data-ng-href="book/{{book.id}}") Пролистать книгу онлайн
     .desc
         .container
             .banner-title.text-center В чем ценность книнги "{{book.title}}"

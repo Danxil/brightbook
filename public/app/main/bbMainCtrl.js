@@ -1,34 +1,39 @@
 angular.module('app').controller('bbMainCtrl', function ($scope, $http, $rootScope) {
     $scope.books = [
         {
-            img: "/images/books/pic-1.png",
-            img2: "/images/books/pic-2.png",
-            title: "Ловушки мышления",
-            author: "Чип Хиз, Дэн Хиз"
+            img: "/images/books/main-books/book-1.png",
+            img2: "/images/books/main-books/book-2.png",
+            title: "Межигорский Синдром. Диагноз власти Виктора Януковича",
+            author: "Сергей Лещенко",
+            link: "/category/3/book/2/"
         },
         {
-            img: "/images/books/pic-1.png",
-            img2: "/images/books/pic-2.png",
-            title: "Ловушки мышления",
-            author: "Чип Хиз, Дэн Хиз"
+            img: "/images/books/main-books/book-1.png",
+            img2: "/images/books/main-books/book-2.png",
+            title: "Межигорский Синдром. Диагноз власти Виктора Януковича",
+            author: "Сергей Лещенко",
+            link: "/category/3/book/2/"
         },
         {
-            img: "/images/books/pic-1.png",
-            img2: "/images/books/pic-2.png",
-            title: "Ловушки мышления",
-            author: "Чип Хиз, Дэн Хиз"
+            img: "/images/books/main-books/book-1.png",
+            img2: "/images/books/main-books/book-2.png",
+            title: "Межигорский Синдром. Диагноз власти Виктора Януковича",
+            author: "Сергей Лещенко",
+            link: "/category/3/book/2/"
         },
         {
-            img: "/images/books/pic-1.png",
-            img2: "/images/books/pic-2.png",
-            title: "Ловушки мышления",
-            author: "Чип Хиз, Дэн Хиз"
+            img: "/images/books/main-books/book-1.png",
+            img2: "/images/books/main-books/book-2.png",
+            title: "Межигорский Синдром. Диагноз власти Виктора Януковича",
+            author: "Сергей Лещенко",
+            link: "/category/3/book/2/"
         },
         {
-            img: "/images/books/pic-1.png",
-            img2: "/images/books/pic-2.png",
-            title: "Ловушки мышления",
-            author: "Чип Хиз, Дэн Хиз"
+            img: "/images/books/main-books/book-1.png",
+            img2: "/images/books/main-books/book-2.png",
+            title: "Межигорский Синдром. Д,иагноз власти Виктора Януковича",
+            author: "Сергей Лещенко",
+            link: "/category/3/book/2/"
         }
     ];
 
