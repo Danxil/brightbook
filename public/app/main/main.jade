@@ -8,11 +8,12 @@
 .books-list
     .container
         .book(ng-repeat="book in books", ng-mouseover="switchBookImg(book)", ng-mouseout="switchBookImg(book)")
-            img.book__img(src="{{book.img}}")
-            .book__details
-                .book__title {{book.title}}
-                .book__author {{book.author}}
-                a.book__more(data-ng-href="{{book.link}}") подробней →
+            a(data-ng-href="{{book.link}}")
+                img.book__img(src="{{book.img}}")
+                .book__details
+                    .book__title {{book.title}}
+                    .book__author {{book.author}}
+                    a.book__more(data-ng-href="{{book.link}}") подробней →
 .news
     .container
         .news__title Новости

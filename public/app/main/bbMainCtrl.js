@@ -3,35 +3,35 @@ angular.module('app').controller('bbMainCtrl', function ($scope, $http, $rootSco
         {
             img: "/images/books/main-books/book-1.png",
             img2: "/images/books/main-books/book-2.png",
-            title: "Межигорский Синдром. Диагноз власти Виктора Януковича",
+            title: "Межигорский Синдром.",
             author: "Сергей Лещенко",
             link: "/category/3/book/2/"
         },
         {
             img: "/images/books/main-books/book-1.png",
             img2: "/images/books/main-books/book-2.png",
-            title: "Межигорский Синдром. Диагноз власти Виктора Януковича",
+            title: "Межигорский Синдром.",
             author: "Сергей Лещенко",
             link: "/category/3/book/2/"
         },
         {
             img: "/images/books/main-books/book-1.png",
             img2: "/images/books/main-books/book-2.png",
-            title: "Межигорский Синдром. Диагноз власти Виктора Януковича",
+            title: "Межигорский Синдром.",
             author: "Сергей Лещенко",
             link: "/category/3/book/2/"
         },
         {
             img: "/images/books/main-books/book-1.png",
             img2: "/images/books/main-books/book-2.png",
-            title: "Межигорский Синдром. Диагноз власти Виктора Януковича",
+            title: "Межигорский Синдром.",
             author: "Сергей Лещенко",
             link: "/category/3/book/2/"
         },
         {
             img: "/images/books/main-books/book-1.png",
             img2: "/images/books/main-books/book-2.png",
-            title: "Межигорский Синдром. Д,иагноз власти Виктора Януковича",
+            title: "Межигорский Синдром.",
             author: "Сергей Лещенко",
             link: "/category/3/book/2/"
         }
