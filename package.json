@@ -25,5 +25,8 @@
     "sequelize": "^3.3.0",
     "stylus": "^0.50.0",
     "vow": "^0.4.10"
+  },
+  "devDependencies": {
+    "should": "^7.0.1"
   }
 }

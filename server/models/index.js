@@ -1,17 +1,8 @@
 "use strict";
 
-module.exports = function(config) {
+module.exports = function(db) {
     var fs        = require("fs");
     var path      = require("path");
-    var Sequelize = require("sequelize");
-    var sequelize = new Sequelize(config.db, config.dbUser, config.dbPass, {
-        host: config.dbHost,
-        dialect: 'mysql',
-        define: {
-            timestamps: false,
-        }
-    })
-    var db        = {};
 
     fs
         .readdirSync(__dirname)
@@ -19,7 +10,7 @@ module.exports = function(config) {
             return (file.indexOf(".") !== 0) && (file !== "index.js");
         })
         .forEach(function(file) {
-            var model = sequelize["import"](path.join(__dirname, file));
+            var model = db.sequelize["import"](path.join(__dirname, file));
             db[model.name] = model;
         });
 
@@ -28,9 +19,6 @@ module.exports = function(config) {
             db[modelName].associate(db);
         }
     });
-
-    db.sequelize = sequelize;
-    db.Sequelize = Sequelize;
 
     return db;
 }

@@ -10,10 +10,10 @@ var app = express();
 var config = require('./server/config/config')[env];
 
 require('./server/config/express')(app, config);
+var db = require('./server/config/db')(config);
+db = require('./server/models')(db);
 
 var emailService = require('./server/apiServices/emailService')(config);
-
-var db = require('./server/models')(config);
 
 var bestAuth = require('best-auth')(db);
 require('./server/config/routes')(app, emailService);
