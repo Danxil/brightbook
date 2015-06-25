@@ -43,4 +43,18 @@ describe('models', function(){
             })
         })
     })
+
+    it('can be check group', function(done){
+        var reqSessionAdmin = {
+            login: 'admin',
+            password: '1'
+        }
+
+        admin.getGroup().then(function(group) {
+            db.Group.findOne({where: {id: admin.get('GroupId')}}).then(function(adminGroup) {
+                var success = group.get('name') == adminGroup.get('name') && group.get('access') == adminGroup.get('access')
+                success ? done() : done('error')
+            })
+        })
+    })
 })
