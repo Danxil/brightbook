@@ -1,4 +1,4 @@
-angular.module('app').controller('bbGlobalCtrl', function ($scope, $rootScope, $document, $timeout) {
+angular.module('app').controller('bbGlobalCtrl', function ($scope, $rootScope, $document, $timeout, authorisation) {
     $scope.subMenuMarkers = {
         booksVisible: false,
         authorsVisible: false,
@@ -48,5 +48,12 @@ angular.module('app').controller('bbGlobalCtrl', function ($scope, $rootScope, $
             $(window).bind('scroll', $scope.subMenuClose)
         else
             $(window).unbind('scroll', $scope.subMenuClose)
+    }
+
+    $scope.authorisation = {
+        login: function() {
+            authorisation.login(this.loginData)
+        },
+        loginData: {}
     }
 });

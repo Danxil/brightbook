@@ -58,13 +58,13 @@ block main-content
                 a.categories__item Об издательстве
     .sub-menu(ng-class="{'sub-menu_visible': subMenuMarkers.loginVisible}")
         .container.categories
-            div.login-form
+            form.login-form(data-ng-submit="authorisation.login()")
                 .row
                     .input-wrapp.login
-                        input.subscribal__input.input
+                        input.subscribal__input.input(data-ng-model="authorisation.loginData.login")
                 .row
                     .input-wrapp.pass
-                        input.subscribal__input.input(type="password")
+                        input.subscribal__input.input(type="password" data-ng-model="authorisation.loginData.password")
                         button.enter-btn
     .sub-menu(ng-class="{'sub-menu_visible': subMenuMarkers.searchVisible}")
         .container.categories

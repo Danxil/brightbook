@@ -23,38 +23,4 @@ describe('models', function(){
         admin.authorisation('1') && !admin.authorisation('2') ? done() : done('error')
     })
 
-
-    it('can be create new user', function(done){
-        db.User.createUser('vasia', '1', 'user').then(function(vasia) {
-            db.Group.findOne({where: {name: 'user'}}).then(function(group) {
-                var success = vasia.authorisation('1') && !vasia.authorisation('2') && vasia.get('groupId') == group.get('groupId')
-                vasia.destroy()
-
-                success ? done() : done('error')
-            })
-        })
-    })
-
-    it('can be get user group', function(done){
-        admin.getGroup().then(function(group) {
-            db.Group.findOne({where: {id: admin.get('GroupId')}}).then(function(adminGroup) {
-                var success = group.get('name') == adminGroup.get('name') && group.get('access') == adminGroup.get('access')
-                success ? done() : done('error')
-            })
-        })
-    })
-
-    it('can be check group', function(done){
-        var reqSessionAdmin = {
-            login: 'admin',
-            password: '1'
-        }
-
-        admin.getGroup().then(function(group) {
-            db.Group.findOne({where: {id: admin.get('GroupId')}}).then(function(adminGroup) {
-                var success = group.get('name') == adminGroup.get('name') && group.get('access') == adminGroup.get('access')
-                success ? done() : done('error')
-            })
-        })
-    })
 })

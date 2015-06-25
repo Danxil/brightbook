@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngResource', 'ngRoute', 'ngAnimate', 'ngSanitize', 'duScroll']);
+var app = angular.module('app', ['ngResource', 'ngRoute', 'ngAnimate', 'ngSanitize', 'duScroll', 'ipCookie']);
 
 app.config(function ($routeProvider, $locationProvider) {
     $locationProvider.html5Mode({
@@ -9,11 +9,11 @@ app.config(function ($routeProvider, $locationProvider) {
     $routeProvider
         .when('/', {templateUrl: '/partials/main/main', controller: 'bbMainCtrl'})
         .when('/main', {
-            templateUrl: '/partials/main/main/',
+            templateUrl: '/partials/main/main',
             controller: 'bbMainCtrl'
         })
         .when('/cabinet', {
-            templateUrl: '/partials/cabinet/cabinet/',
+            templateUrl: '/privat/cabinet',
             controller: 'bbCabinetCtrl'
         })
         .when('/category/:categoryId/', {

@@ -8,6 +8,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "angular-scroll": "~0.7.1"
+    "angular-scroll": "~0.7.1",
+    "angular-cookie": "~4.0.8"
   }
 }

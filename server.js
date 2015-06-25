@@ -13,20 +13,22 @@ require('./server/config/express')(app, config);
 var db = require('./server/config/db')(config);
 db = require('./server/models')(db);
 
+var passport = require('./server/config/passport')(app, db);
+
 var emailService = require('./server/apiServices/emailService')(config);
 
-var bestAuth = require('best-auth')(db);
-require('./server/config/routes')(app, emailService);
+require('./server/config/routes')(app, db, emailService, passport);
 
 db.sequelize.sync().then(function () {
     function createGroup(name, access) {
         var def = q.defer()
 
-        var group = db.Group.create({
+
+        var group = db.Group.findOrCreate({where: {
             name: name,
             access: access
-        }).then(function(group) {
-            def.resolve(group)
+        }}).then(function(group) {
+            def.resolve(group[0])
         })
 
         return def.promise()
@@ -39,13 +41,24 @@ db.sequelize.sync().then(function () {
     q.all(proms).then(function(results){
         var adminGroup = results[0]
 
-        db.User.create({
-            login: 'admin',
-            password: '1'
-        }).then(function(result) {
-            adminGroup.setUser(result).then(function(){
-                app.listen(config.port);
-                console.log('Listening on port ' + config.port + '...');
+        db.User.findOne({where: {
+            login: 'admin'
+        }}).then(function(user) {
+            fn = function() {
+                adminGroup.setUser().then(function(){
+                    app.listen(config.port);
+                    console.log('Listening on port ' + config.port + '...');
+                })
+            }
+
+            if (user)
+                return fn()
+            db.User.create({
+                login: 'admin',
+                password: '1'
+            }).then(function() {
+                fn()
+
             })
         })
     })
