@@ -1,4 +1,16 @@
-angular.module('app').controller('bbGlobalCtrl', function ($scope, $rootScope, $document, $timeout, authorisation) {
+angular.module('app').controller('bbGlobalCtrl', function (
+    $scope,
+    $rootScope,
+    $document,
+    $timeout,
+    authorisation,
+    $location
+) {
+    authorisation.getUserData().then(function(userData) {
+        $scope.authorisation.userData = userData
+    }, function() {
+    })
+
     $scope.subMenuMarkers = {
         booksVisible: false,
         authorsVisible: false,
@@ -51,8 +63,42 @@ angular.module('app').controller('bbGlobalCtrl', function ($scope, $rootScope, $
     }
 
     $scope.authorisation = {
+        clearAllData: function() {
+            this.registrationData = {}
+            this.loginData = {}
+            this.registrationError = null
+            this.loginError = null
+
+            $scope.loginForm.$setUntouched()
+            $scope.registrationForm.$setUntouched()
+        },
         login: function() {
-            authorisation.login(this.loginData)
+            if ($scope.loginForm.$invalid)
+                return
+
+            authorisation.login(this.loginData).then((function(user) {
+                this.userData = user.data
+                this.clearAllData()
+
+                $location.path('/cabinet')
+            }).bind(this), (function(error) {
+                this.loginError = error.status
+            }).bind(this))
+        },
+        registration: function() {
+            if ($scope.registrationForm.$invalid)
+                return
+
+            this.registrationError = null
+
+            authorisation.registration(this.registrationData).then((function(user) {
+                this.userData = user.data
+
+                this.clearAllData()
+                this.registrationActive = this.registrationError = false
+            }).bind(this), (function(error) {
+                this.registrationError = error.status
+            }).bind(this))
         },
         loginData: {}
     }

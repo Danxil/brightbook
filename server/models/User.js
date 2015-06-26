@@ -5,7 +5,7 @@ module.exports = function(sequelize, DataTypes) {
     var User = sequelize.define('User', {
         login: {
             type: DataTypes.STRING,
-            unique: true
+            unique: true,
         },
         password: {
             type: DataTypes.STRING,
@@ -34,6 +34,8 @@ module.exports = function(sequelize, DataTypes) {
                         group.setUser(user)
                         def.resolve(user)
                     })
+                }, function(error) {
+                    def.reject(error)
                 })
 
                 return def.promise()

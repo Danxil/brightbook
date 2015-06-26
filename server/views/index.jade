@@ -25,7 +25,8 @@ block main-content
                         li.menu__item
                             a.menu__link(ng-click="subMenuOpen('more')", ng-class="{active: subMenuMarkers.moreVisible}") Больше
                         li.menu__item
-                            a.menu__link(ng-click="subMenuOpen('login')", ng-class="{active: subMenuMarkers.loginVisible}") Войти к себе
+                            a.menu__link(data-ng-show="!authorisation.userData" ng-click="subMenuOpen('login')", ng-class="{active: subMenuMarkers.loginVisible}") Войти к себе
+                            a.menu__link(data-ng-show="authorisation.userData" href="/cabinet", ng-class="{active: subMenuMarkers.loginVisible}") Кабинет
                         li.menu__item(ng-click="subMenuOpen('search')")
                             i.fa.fa-search
     .localization
@@ -58,14 +59,29 @@ block main-content
                 a.categories__item Об издательстве
     .sub-menu(ng-class="{'sub-menu_visible': subMenuMarkers.loginVisible}")
         .container.categories
-            form.login-form(data-ng-submit="authorisation.login()")
+            p.auth-result(data-ng-show="authorisation.loginError == 401") Неверный email/пароль.
+            p.auth-result(data-ng-show="authorisation.registrationError === false") Регистрация прошла успешно.
+            p.auth-result(data-ng-show="authorisation.registrationError.name == 'SequelizeUniqueConstraintError'") Пользователь с такой почтой уже существует.
+            form.login-form.animate-show(novalidate="" name="loginForm" data-ng-submit="authorisation.login()" data-ng-show="!authorisation.registrationActive")
                 .row
                     .input-wrapp.login
-                        input.subscribal__input.input(data-ng-model="authorisation.loginData.login")
+                        input.subscribal__input.input(placeholder="Введите ваш email" data-field-validation="email" data-ng-model="authorisation.loginData.login")
                 .row
                     .input-wrapp.pass
-                        input.subscribal__input.input(type="password" data-ng-model="authorisation.loginData.password")
+                        input.subscribal__input.input(placeholder="Введите ваш пароль" type="password" data-field-validation="password" data-ng-model="authorisation.loginData.password")
                         button.enter-btn
+                .row
+                    a.registration-toggler(data-ng-click="authorisation.registrationActive = true") Перейти к регистрации
+            form.login-form.animate-show(novalidate="" name="registrationForm" data-ng-submit="authorisation.registration()" data-ng-show="authorisation.registrationActive")
+                .row
+                    .input-wrapp.login
+                        input.subscribal__input.input(placeholder="Введите ваш email" data-field-validation="email" data-ng-model="authorisation.registrationData.login")
+                .row
+                    .input-wrapp.pass
+                        input.subscribal__input.input(placeholder="Введите ваш пароль" type="password" data-field-validation="password" data-ng-model="authorisation.registrationData.password")
+                        button.enter-btn
+                .row
+                    a(data-ng-click="authorisation.registrationActive = false") Я уже зарегистрирован
     .sub-menu(ng-class="{'sub-menu_visible': subMenuMarkers.searchVisible}")
         .container.categories
            .h3 Поиск

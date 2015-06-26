@@ -16,18 +16,17 @@ module.exports = function (app, db) {
     passport.use(new LocalStrategy({
             usernameField: 'login',
             passwordField: 'password',
+            session: false
         }, function(username, password, done) {
-            process.nextTick(function () {
-                db.User.findOne({where: {login: username}}).then(function(user) {
-                    console.log(1)
-                    if (!user) { return done(null, false, JSON.stringify({ message: 'Unknown user ' + username })); }
+            db.User.findOne({where: {login: username}}).then(function(user) {
+                if (!user)
+                    return done(null, false, JSON.stringify({ message: 'Unknown user'}))
 
-                    if (!user.authorisation(password))
-                        return done(null, false, JSON.stringify({ message: 'Invalid password' }));
+                if (!user.authorisation(password))
+                    return done(null, false, JSON.stringify('Invalid password'));
 
-                    return done(null, false)
-                })
-            });
+                return done(null, user)
+            })
         }
     ));
 

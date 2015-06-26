@@ -3,15 +3,11 @@ app.factory('authorisation', function($http, $q, $window, ipCookie) {
         login: function (loginData) {
             return $http.post("/api/login", {login: loginData.login, password: loginData.password})
         },
-        getUser: function () {
-            if (this.userInfo) {
-                return this.userInfo;
-            } else {
-                return this.login();
-            }
+        registration: function (registrationData) {
+            return $http.post("/api/registration", {login: registrationData.login, password: registrationData.password})
         },
-        updateUser: function () {
-            return this.login();
+        getUserData: function () {
+            return $http.get("/api/login")
         }
     }
 })
