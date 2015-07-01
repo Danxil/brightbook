@@ -1,0 +1,66 @@
+.produce-book
+    .container
+        .section-title Издать книгу за средства Автора/Заказчика:
+        .info-block Если вы хотите издать книгу, пожалуйста, заполните форму ниже, чтобы мы могли расчитать стоимость издания вашей книги.
+        .feedback
+            .feedback__inner
+                .row
+                    .feedback__title Заявка
+                    .feedback__rect
+                    .feedback__square
+                label В каких допечатных процессах нуждается книга
+                .row.book-props
+                    .item
+                        input(type="checkbox" id="feedbackProp1")
+                        label.checkbox(for="feedbackProp1")
+                        label.prop-label(for="feedbackProp1") Перевод
+                    .item
+                        input(type="checkbox" id="feedbackProp2")
+                        label.checkbox(for="feedbackProp2")
+                        label.prop-label(for="feedbackProp2") Редактирование
+                    .item
+                        input(type="checkbox" id="feedbackProp3")
+                        label.checkbox(for="feedbackProp3")
+                        label.prop-label(for="feedbackProp3") Корректура
+                    .item
+                        input(type="checkbox" id="feedbackProp4")
+                        label.checkbox(for="feedbackProp4")
+                        label.prop-label(for="feedbackProp4") Верстка
+                    .item
+                        input(type="checkbox" id="feedbackProp5")
+                        label.checkbox(for="feedbackProp5")
+                        label.prop-label(for="feedbackProp5") Дизайн обложки
+                .row
+                    .row
+                        .col-lg-4
+                            label(for="feedbackFormat") Формат книги
+                            input(id="feedbackFormat" type="text")
+                        .col-lg-4
+                            label(for="feedbackCountSymbols") Количество знаков с пробелами
+                            input(id="feedbackCountSymbols" type="text")
+                        .col-lg-4
+                            label(for="feedbackCount") Тираж
+                            input(id="feedbackCount" type="text")
+                .row
+                    .col-lg-12
+                        .row
+                            label(for="feedbackMessage1") Тип (твердый переплет, мягкая обложка), бумага и красочность обложки
+                            input(id="feedbackMessage1" type="text")
+                .row
+                    .col-lg-12
+                        .row
+                            label(for="feedbackMessage1") Бумага и красочность внутренниего блока
+                            input(id="feedbackMessage1" type="text")
+                .row
+                    .row
+                        .col-lg-4
+                            label(for="feedbackName") Ваше ФИО
+                            input(id="feedbackName" type="text")
+                        .col-lg-4
+                            label(for="feedbackPhone") Контактный телефон
+                            input(id="feedbackPhone" type="text")
+                        .col-lg-4
+                            label(for="feedbackEmail") Электронный адрес
+                            input(id="feedbackEmail" type="text")
+                .row
+                    button.feedback__submit отправить →

@@ -1,0 +1,51 @@
+.bg-contacts(data-set-transparent-header="")
+.contacts
+    .container
+        .section-title Контакты
+        .section-title.color-red Издательства "Брайт Стар Паблишинг"
+        .contacts-block
+            .column.column-one
+                p.item Тел./факс: (044) 593 20 62, (044) 593 20 61
+                p.item Тел.: (067) 734 99 42
+            .column.column-two
+                p.item Почтовый адрес:
+                p.item А/я 194, Киев 02002, Украина
+        .bottom-block
+            p.text-center Издательству "Брайт Стар Паблишинг" принадлежат торговые марки
+            p.text-center "Светлая звезда", "Брайт Букс", "Брайт Чилдрен"
+        .feedback
+            .feedback__inner
+                .row
+                    .feedback__title Напишите нам
+                    .feedback__rect
+                    .feedback__square
+                .row
+                    .col-lg-5
+                        .row
+                            label(for="feedbackSubject") Тема/Кому
+                            select(id="feedbackSubject")
+                                option Купить книги оптом
+                                option Хочу предложить свою книгу
+                                option В редакцию «Теплых историй»
+                                option Предложить сотрудничество
+                                option Вопросы по работе сайта
+                                option Ошибки или очепятки в книгах
+                                option Дмитрий Кириченко, издатель
+                .row
+                    .col-lg-12
+                        .row
+                            label(for="feedbackMessage") Ваше сообщение
+                            textarea(id="feedbackMessage")
+                .row
+                    .row
+                        .col-lg-4
+                            label(for="feedbackName") Ваше ФИО
+                            input(id="feedbackName" type="text")
+                        .col-lg-4
+                            label(for="feedbackPhone") Контактный телефон
+                            input(id="feedbackPhone" type="text")
+                        .col-lg-4
+                            label(for="feedbackEmail") Электронный адрес
+                            input(id="feedbackEmail" type="text")
+                .row
+                    button.feedback__submit отправить →

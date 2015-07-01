@@ -121,6 +121,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+.inline {
+  display: inline-block !important;
+}
+.color-black {
+  color: #000 !important;
+}
 .color-red {
   color: #c20e1a !important;
 }
@@ -376,12 +382,10 @@ table {
   vertical-align: top;
   width: 50%;
 }
-.column-wrapper-main .column.one,
-.column-wrapper-main .column .book-icon-wrapp {
-  height: 700px;
+.column-wrapper-main .column.one .book-icon-wrapp {
+  height: 600px;
 }
-.column-wrapper-main .column.one .book-icon,
-.column-wrapper-main .column .book-icon-wrapp .book-icon {
+.column-wrapper-main .column.one .book-icon-wrapp .book-icon {
   height: 700px;
   position: absolute;
 }
@@ -497,6 +501,65 @@ table {
 }
 .desc .column-wrapper-main .column {
   height: auto;
+}
+.bg-contacts {
+  height: 600px;
+  background: url("../images/bg-contacts.jpg") center bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.contacts {
+  padding-top: 40px;
+  font-size: 20px;
+}
+.contacts .contacts-block {
+  margin-top: 50px;
+  display: table;
+  width: 100%;
+  font-size: 0;
+}
+.contacts .contacts-block .column {
+  padding-left: 150px;
+  width: 50%;
+  display: table-cell;
+}
+.contacts .contacts-block .column .item {
+  font-size: 20px;
+}
+.contacts .bottom-block {
+  margin-top: 50px;
+}
+.contacts .feedback input[type="text"] {
+  width: 100%;
+}
+.produce-book {
+  padding-top: 100px;
+  font-size: 15pt;
+}
+.produce-book .info-block {
+  padding: 40px 40px 0;
+}
+.produce-book .feedback input[type="text"] {
+  width: 100%;
+}
+.produce-book .feedback .book-props {
+  font-size: 0;
+  margin-top: 15px;
+}
+.produce-book .feedback .book-props .item {
+  display: inline-block;
+  margin-left: 30px;
+}
+.produce-book .feedback .book-props .item:first-child {
+  margin-left: 0;
+}
+.produce-book .feedback .book-props .item .prop-label,
+.produce-book .feedback .book-props .item .checkbox {
+  display: inline-block;
+  vertical-align: middle;
+}
+.produce-book .feedback .book-props .item .prop-label {
+  margin-left: 10px;
 }
 .view-animate {
   opacity: 1;
@@ -1221,7 +1284,7 @@ body.transparent-header .main > div:first-child {
   color: #fff;
 }
 .banner {
-  background: url("../images/bg-banner.png") no-repeat center;
+  background: url("../images/bg-banner.jpg") no-repeat center;
   background-size: cover;
   text-align: center;
   padding: 150px 0 150px;
@@ -1263,4 +1326,17 @@ input.ng-touched.ng-invalid-pattern + .error-block .input-error.pattern {
 .auth-result {
   font-size: 20px;
   margin-bottom: 20px;
+}
+input[type="checkbox"] {
+  display: none;
+}
+input[type="checkbox"]:checked + label.checkbox {
+  background: #ff1500;
+}
+input[type="checkbox"] + label.checkbox {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  border: 1px solid #b7b7b7;
+  background: #fff;
 }

@@ -1,14 +1,15 @@
 app.directive("transparentHeader", function($rootScope) {
     return {
-        scope: {
-            transparent: '=transparentHeader',
-        },
         link: function ($scope, elem, attrs) {
-            $scope.$watch('transparent', function(newVal) {
+            $scope.$watch('transparentHeader', function(newVal) {
                 if (newVal)
                     $('body').addClass('transparent-header')
                 else
                     $('body').removeClass('transparent-header')
+            })
+
+            $rootScope.$on("$routeChangeSuccess", function () {
+                $rootScope.transparentHeader = false
             })
 
             $(window).scroll(function() {
@@ -17,6 +18,14 @@ app.directive("transparentHeader", function($rootScope) {
                 else
                     $('.header-wrapp').removeClass('scrolled')
             })
+        }
+    }
+})
+
+app.directive("setTransparentHeader", function($rootScope) {
+    return {
+        link: function ($scope, elem, attrs) {
+            $rootScope.transparentHeader = true
         }
     }
 })

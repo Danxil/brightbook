@@ -24,6 +24,7 @@ module.exports = {
         emailHost: 'smtp.mandrillapp.com',
         emailPort: '587',
         fromEmail: 'eriendel97@gmail.com',
-        managerEmail: 'artem@likefor.org'
+        managerEmail: 'artem@likefor.org',
+        dbUrl: 'mysql://bbca8a59bac3f4:48fd2eff@eu-cdbr-west-01.cleardb.com/heroku_a2ca696a86fa97b?reconnect=true'
     }
 };

@@ -1,6 +1,6 @@
-.desc
+.desc(style="background-image: url('{{category.bg}}');" data-set-transparent-header="")
     .container
-        .banner-title.text-center {{category.title}}
+        .banner-title.text-center(data-ng-class="{'color-black': category.textColorSchema == 'black'}") {{category.title}}
         ul.category-books-list
             li.item(data-ng-repeat="book in category.books")
                 a.link(href="{{'#book-id-' + book.id}}" data-scroll-to-anchor)
@@ -8,7 +8,9 @@
 div(data-ng-repeat="book in category.books" id="{{'book-id-' + book.id}}")
     .book-description(style="background-image: url('{{book.bookBanner}}')")
         .container
-            .column-wrapper
+            .column-wrapper-main
+                .column.one(data-ng-show="book.bookFormSideSchema == 'right'")
+                    .book-icon-wrapp
                 .column.two
                     .book-application.with-bg
                         p.category Раздел "{{book.category}}"
@@ -36,17 +38,18 @@ div(data-ng-repeat="book in category.books" id="{{'book-id-' + book.id}}")
                                     .by-link-wrapper
                                         a.by-link купить
                                     .clearfix
-    .desc
+    .desc(style="background-image: url('{{book.customBgSchema || category.bg}}');")
         .container
-            .banner-title.text-center В чем ценность книнги "{{book.title}}"
-            .newpiece.true.full-with
-                img(data-ng-src="/images/books/portret.png").newpiece__image
-                .newpiece__info
-                    span.newpiece__title.italic(data-ng-bind-html="book.bookReason.text")
-                    .bottom-line.author {{book.bookReason.author}}
+            div(data-ng-show="book.bookReason")
+                .banner-title.text-center(data-ng-class="{'color-black': category.textColorSchema == 'black'}" ) В чем ценность книнги "{{book.title}}"
+                .newpiece.true.full-with
+                    img(data-ng-src="/images/books/portret.png").newpiece__image
+                    .newpiece__info
+                        span.newpiece__title.italic(data-ng-bind-html="book.bookReason.text")
+                        .bottom-line.author {{book.bookReason.author}}
             .column-wrapper-main
                 .column.one
-                    .banner-title.text-left Автор
+                    .banner-title.text-left(data-ng-class="{'color-black': category.textColorSchema == 'black'}" ) Автор
                     .newpiece-wrapp
                         .newpiece.true
                             img(data-ng-src="{{book.authorAvatar}}").newpiece__image
