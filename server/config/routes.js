@@ -34,6 +34,7 @@ module.exports = function (app, db, emailService, passport) {
             res.send(401)
     })
 
+    /*
     app.post('/api/login', checkUser, function (req, res) {
         var username = req.body.login
 
@@ -61,7 +62,7 @@ module.exports = function (app, db, emailService, passport) {
             res.send(400, error)
         })
     });
-
+    */
 
     app.get('*', function (req, res) {
         res.render('index');
