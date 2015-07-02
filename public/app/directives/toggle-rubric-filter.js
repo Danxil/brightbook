@@ -5,6 +5,7 @@ app.directive("toggleRubricFilter", function($timeout) {
                 $(attrs.toggleRubricFilter).toggle('slow')
             })
 
+            $('[data-toggle-rubric-filter]:not([data-toggle-rubric-filter="' + attrs.toggleRubricFilter + '"])').removeClass('active')
             elem.toggleClass('active')
         })
     };

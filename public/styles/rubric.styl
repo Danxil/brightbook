@@ -3,47 +3,127 @@
     padding-bottom 2px
 
     &.type-1
-      background #EA43F5
+      background #FFBA00
 
       .special-head
-        background #962fa3
-        padding 20px 0
-        position relative
+        background #FF9102
 
         .rubric-filters
-          background #962fa3
-          position absolute
-          left 0
-          right 0
-          top 100%
+          background #FF9102
 
-        .info-block
-          padding 10px 0
-          color #fff
-          text-align center
-          text-indent 0
+    &.type-2
+      background #4DD9A0
 
-        .buttons-wrapper
-          margin-top 5px
-          font-size 0
-          text-align center
+      .special-head
+        background #18BE7A
 
-          .item
+        .rubric-filters
+          background #18BE7A
+
+    &.type-3
+      background #D164FF
+
+      .special-head
+        background #8E32B5
+
+        .rubric-filters
+          background #8E32B5
+
+    &.type-4
+      background #7EC21E
+
+      .special-head
+        background #399D02
+
+        .rubric-filters
+          background #399D02
+
+    &.type-5
+      background #402F7F
+
+      .special-head
+        background #2B1C5F
+
+        .rubric-filters
+          background #2B1C5F
+
+    .special-head
+      padding 20px 0
+      position relative
+
+      .rubric-filters
+        position absolute
+        left 0
+        right 0
+        top 100%
+
+    .info-block
+      padding 10px 0
+      color #fff
+      text-align center
+      text-indent 0
+
+    .buttons-wrapper
+      margin-top 5px
+      font-size 0
+      text-align center
+
+      .item
+        display inline-block
+        margin-left 20px
+
+        &:first-child
+          margin-left 0
+
+        .simple-button
+
+          &:after
+            content: "\f107"
+            margin-left 10px
             display inline-block
-            margin-left 20px
+            font: normal normal normal 14px/1 FontAwesome;
 
-            &:first-child
-              margin-left 0
+          &.active
+            border-color brightred
+            background #fff
+            color brightred !important
+
+            &:after
+              content: "\f106"
+              vertical-align  1px
 
 .rubric-books-list
   font-size 0
   text-align center
+  padding 70px 0
+
+  &.type-1
+    .link:hover
+      background #FFBA00
+
+  &.type-2
+    .link:hover
+      background #4DD9A0
+
+  &.type-3
+    .link:hover
+      background #D164FF
+
+  &.type-4
+    .link:hover
+      background #7EC21E
+
+  &.type-5
+    .link:hover
+      background #402F7F
 
   .item
     display inline-block
+    width 25%
 
     .link
-      padding 20px
+      padding 30px 0
+      width 100%
 
       .img
         width 200px

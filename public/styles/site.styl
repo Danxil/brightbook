@@ -48,14 +48,35 @@ html, body
 label
   cursor: pointer
 
-body.transparent-header
-  .header
-    border-bottom-color transparent
+body
+  &.transparent-header
+    .header
+      border-bottom-color transparent
 
-  .main
-    > div:first-child
-      margin-top -165px
-      padding-top 170px
+    .main
+      > div:first-child
+        margin-top -165px
+        padding-top 170px
+
+  &.white-color-header
+    .header-wrapp:not(.scrolled)
+      *
+        color #fff !important
+
+      .logo
+        background-image url("../images/logo-wh.png");
+
+      .menu__item .menu__link,
+      .menu__item .fa
+        &:hover,
+        &.active
+          color red !important
+
+
+      .socials__item .fa
+        &:hover
+          color red !important
+
 
 //-----HEADER-----
 
@@ -147,6 +168,7 @@ body.transparent-header
   @extend .h6
   display: inline-block
   margin-left 30px
+  position relative
 
   .fa-search
     cursor pointer
@@ -159,14 +181,21 @@ body.transparent-header
 .menu__item .menu__link
   width: 12px
   height: 6px
-  background-position right
   padding-right 30px
-  background-repeat no-repeat
-  background-image url("../images/icons/brace-down.png")
+
+  &:after
+    position: absolute;
+    right: 0
+    top 5px
+    display inline-block
+    font: normal normal normal 14px/1 FontAwesome;
+    content "\f107"
 
 .menu__item .menu__link.active, .menu__item menu__link:hover
-  background-image url("../images/icons/brace-up.png")
   color red !important
+
+  &:after
+    content "\f106"
 
 .search-btn
   background-image url("../images/icons/search.png")

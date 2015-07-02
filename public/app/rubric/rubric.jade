@@ -1,4 +1,4 @@
-.desc.rubric(data-ng-class="{'type-1': rubric.id}" data-set-transparent-header="")
+.desc.rubric(class="type-{{rubric.id}}" data-set-transparent-header="" data-set-white-color-header="")
     .container
         .special-head
             .section-title.color-white {{rubric.title}}
@@ -7,23 +7,23 @@
                 .item
                     a.simple-button(data-toggle-rubric-filter="#rubric-filter-1") Фильтр по категории
                 .item
-                    a.simple-button(data-toggle-rubric-filter="#rubric-filter-2") Фильтр по категории
+                    a.simple-button(data-toggle-rubric-filter="#rubric-filter-2") Фильтр по автору
             ul.rubric-filters.rubric-filter#rubric-filter-1
-                li.item(data-ng-repeat="book in rubric.books")
-                    input(type="checkbox" id="filter1Prop{{book.id}}")
-                    label.checkbox(for="filter1Prop{{book.id}}")
-                    label.label(for="filter1Prop{{book.id}}") {{book.category}}
+                li.item(data-ng-repeat="category in rubric.booksCategories")
+                    input(type="checkbox" id="filter1Prop{{$index}}" data-ng-model="rubricFilters.category[category]")
+                    label.checkbox(for="filter1Prop{{$index}}")
+                    label.label(for="filter1Prop{{$index}}") {{category}}
             ul.rubric-filters.rubric-filter#rubric-filter-2
-                li.item(data-ng-repeat="book in rubric.books")
-                    input(type="checkbox" id="filter2Prop{{book.id}}")
-                    label.checkbox(for="filter2Prop{{book.id}}")
-                    label.label(for="filter2Prop{{book.id}}") {{book.author}}
+                li.item(data-ng-repeat="author in rubric.booksAuthors")
+                    input(type="checkbox" id="filter2Prop{{$index}}" data-ng-model="rubricFilters.author[author]")
+                    label.checkbox(for="filter2Prop{{$index}}")
+                    label.label(for="filter2Prop{{$index}}") {{author}}
 
 
 .container
-    ul.rubric-books-list(data-ng-class="{'type-1': rubric.id}")
-        li.item(data-ng-repeat="book in rubric.books")
-            a.link(data-ng-href="books/{{book.id}}")
+    ul.rubric-books-list(class="type-{{rubric.id}}")
+        li.item.animate-repeat(data-ng-repeat="book in rubric.books | rubricFilter:rubricFilters.category:rubricFilters.author")
+            a.link(data-ng-href="/book/{{book.id}}")
                 img.img(data-ng-src="{{book.image}}")
 
 .banner

@@ -38,6 +38,132 @@ app.config(function ($routeProvider, $locationProvider) {
                     var rubrics = {
                         1: {
                             id: 1,
+                            title: 'Бестселеры',
+                            description: 'Самые покупаемые книги, которые пользуются искренней любовью покупателей',
+                            books: [
+                                {
+                                    id: 1,
+                                    image: '/images/books/1/book-1.png',
+                                    category: 'Политика',
+                                    title: 'Межигорский Синдром. Диагноз власти Виктора Януковича',
+                                    author: 'Сергей Лещенко',
+                                },
+                                {
+                                    id: 2,
+                                    image: '/images/books/1/book-1.png',
+                                    category: 'Бизнес',
+                                    title: 'не Межигорский Синдром. Диагноз власти Виктора Януковича',
+                                    author: 'не Сергей Лещенко',
+                                },
+                                {
+                                    id: 3,
+                                    image: '/images/books/1/book-1.png',
+                                    category: 'Политика',
+                                    title: 'Межигорский Синдром. Диагноз власти Виктора Януковича',
+                                    author: 'Сергей Лещенко',
+                                },
+                                {
+                                    id: 4,
+                                    image: '/images/books/1/book-1.png',
+                                    category: 'Бизнес',
+                                    title: 'не Межигорский Синдром. Диагноз власти Виктора Януковича',
+                                    author: 'не Сергей Лещенко',
+                                },
+                                {
+                                    id: 5,
+                                    image: '/images/books/1/book-1.png',
+                                    category: 'Политика',
+                                    title: 'Межигорский Синдром. Диагноз власти Виктора Януковича',
+                                    author: 'Сергей Лещенко',
+                                },
+                                {
+                                    id: 6,
+                                    image: '/images/books/1/book-1.png',
+                                    category: 'Бизнес',
+                                    title: 'не Межигорский Синдром. Диагноз власти Виктора Януковича',
+                                    author: 'не Сергей Лещенко',
+                                },
+                                {
+                                    id: 7,
+                                    image: '/images/books/1/book-1.png',
+                                    category: 'Политика',
+                                    title: 'Межигорский Синдром. Диагноз власти Виктора Януковича',
+                                    author: 'Сергей Лещенко',
+                                },
+                                {
+                                    id: 8,
+                                    image: '/images/books/1/book-1.png',
+                                    category: 'Бизнес',
+                                    title: 'не Межигорский Синдром. Диагноз власти Виктора Януковича',
+                                    author: 'не Сергей Лещенко',
+                                }
+                            ]
+                        },
+                        2: {
+                            id: 2,
+                            title: 'Новинки',
+                            description: 'Книги, которые только вышли в свет',
+                            books: [
+                                {
+                                    id: 1,
+                                    image: '/images/books/1/book-1.png',
+                                    category: 'Политика',
+                                    title: 'Межигорский Синдром. Диагноз власти Виктора Януковича',
+                                    author: 'Сергей Лещенко',
+                                },
+                                {
+                                    id: 2,
+                                    image: '/images/books/1/book-1.png',
+                                    category: 'Бизнес',
+                                    title: 'не Межигорский Синдром. Диагноз власти Виктора Януковича',
+                                    author: 'не Сергей Лещенко',
+                                }
+                            ]
+                        },
+                        3: {
+                            id: 3,
+                            title: 'Рекомендуемые',
+                            description: 'Книги, которые подобраны редакцией издательства',
+                            books: [
+                                {
+                                    id: 1,
+                                    image: '/images/books/1/book-1.png',
+                                    category: 'Политика',
+                                    title: 'Межигорский Синдром. Диагноз власти Виктора Януковича',
+                                    author: 'Сергей Лещенко',
+                                },
+                                {
+                                    id: 2,
+                                    image: '/images/books/1/book-1.png',
+                                    category: 'Бизнес',
+                                    title: 'не Межигорский Синдром. Диагноз власти Виктора Януковича',
+                                    author: 'не Сергей Лещенко',
+                                }
+                            ]
+                        },
+                        4: {
+                            id: 4,
+                            title: 'Скоро',
+                            description: 'Книги, которые поступят в продажу совсем скоро',
+                            books: [
+                                {
+                                    id: 1,
+                                    image: '/images/books/1/book-1.png',
+                                    category: 'Политика',
+                                    title: 'Межигорский Синдром. Диагноз власти Виктора Януковича',
+                                    author: 'Сергей Лещенко',
+                                },
+                                {
+                                    id: 2,
+                                    image: '/images/books/1/book-1.png',
+                                    category: 'Бизнес',
+                                    title: 'не Межигорский Синдром. Диагноз власти Виктора Януковича',
+                                    author: 'не Сергей Лещенко',
+                                }
+                            ]
+                        },
+                        5: {
+                            id: 5,
                             title: 'Электронные книги',
                             description: 'Книги доступные только в форматах pdf и epub',
                             books: [
@@ -56,7 +182,7 @@ app.config(function ($routeProvider, $locationProvider) {
                                     author: 'не Сергей Лещенко',
                                 }
                             ]
-                        },
+                        }
                     }
 
                     rubricId = $route.current.params.rubricId
@@ -64,7 +190,20 @@ app.config(function ($routeProvider, $locationProvider) {
                     if (!rubrics[rubricId])
                         def.reject()
 
-                    def.resolve(rubrics[rubricId])
+                    var rubric = _.clone(rubrics[rubricId])
+
+                    rubric.booksCategories =[]
+                    rubric.booksAuthors =[]
+
+                    _.each(rubric.books, function(book) {
+                        if (rubric.booksCategories.indexOf(book.category) == -1)
+                            rubric.booksCategories.push(book.category)
+
+                        if (rubric.booksAuthors.indexOf(book.author) == -1)
+                            rubric.booksAuthors.push(book.author)
+                    })
+
+                    def.resolve(rubric)
 
                     return def.promise
                 }
