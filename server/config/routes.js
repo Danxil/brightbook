@@ -1,7 +1,7 @@
 var crypto = require('crypto')
 
 module.exports = function (app, db, emailService, passport) {
-    var checkUser = passport.authenticate('local')
+    //var checkUser = passport.authenticate('local')
 
     var ensureAuthenticated = function (req, res, next) {
         if (req.isAuthenticated()) { return next(); }

@@ -17,8 +17,7 @@ require('./server/config/express')(app, config);
 
 var emailService = require('./server/apiServices/emailService')(config);
 
-//require('./server/config/routes')(app, db, emailService, passport);
-//require('./server/config/routes')(app, db, emailService, passport);
+require('./server/config/routes')(app, db, emailService, passport);
 /*
 db.sequelize.sync().then(function () {
     function createGroup(name, access) {
