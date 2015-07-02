@@ -5,6 +5,8 @@
 @import category
 @import contacts
 @import produce-book
+@import offer-book
+@import special
 @import animations
 
 @font-face {
@@ -729,3 +731,34 @@ input[type="checkbox"]
     height 35px
     border 1px solid #b7b7b7
     background #fff
+
+p.info-block
+  font-size 13pt
+  text-indent 1.5em
+  padding 40px 0
+  line-height 1.8
+
+
+  .link
+    text-decoration underline !important
+
+  *
+    text-indent 0
+
+p.info-block + p.info-block
+  padding-top 0
+
+.desc
+  padding 50px 0
+  background-size cover
+
+.simple-button
+  border 2px solid #fff
+  padding 7px 10px 5px
+  font-size 10pt
+  text-transform uppercase
+  color #fff !important
+  display inline-block
+
+  &:hover
+    color: #fff !important

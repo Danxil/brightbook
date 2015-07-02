@@ -11,13 +11,14 @@ var config = require('./server/config/config')[env];
 
 require('./server/config/express')(app, config);
 var db = require('./server/config/db')(config);
-db = require('./server/models')(db);
+//db = require('./server/models')(db);
 
-var passport = require('./server/config/passport')(app, db);
+//var passport = require('./server/config/passport')(app, db);
 
 var emailService = require('./server/apiServices/emailService')(config);
 
-require('./server/config/routes')(app, db, emailService, passport);
+//require('./server/config/routes')(app, db, emailService, passport);
+//require('./server/config/routes')(app, db, emailService, passport);
 
 db.sequelize.sync().then(function () {
     function createGroup(name, access) {

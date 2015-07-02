@@ -24,6 +24,14 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: '/partials/produce-book/produce-book',
             controller: 'bbProduceBookCtrl'
         })
+        .when('/offer-book', {
+            templateUrl: '/partials/offer-book/offer-book',
+            controller: 'bbOfferBookCtrl'
+        })
+        .when('/special', {
+            templateUrl: '/partials/special/special',
+            controller: 'bbSpecialCtrl'
+        })
         .when('/category/:categoryId/', {
             templateUrl: '/partials/category/category',
             controller: 'bbCategoryCtrl',

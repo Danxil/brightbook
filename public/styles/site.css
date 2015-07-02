@@ -124,6 +124,9 @@ table {
 .inline {
   display: inline-block !important;
 }
+.color-white {
+  color: #fff !important;
+}
 .color-black {
   color: #000 !important;
 }
@@ -473,11 +476,6 @@ table {
   left: 110px;
   bottom: -35px;
 }
-.desc {
-  padding: 50px 0;
-  background: url("../images/category-bg.jpg");
-  background-size: cover;
-}
 .category-books-list {
   font-size: 0;
   margin-top: 30px;
@@ -536,9 +534,6 @@ table {
   padding-top: 100px;
   font-size: 15pt;
 }
-.produce-book .info-block {
-  padding: 40px 40px 0;
-}
 .produce-book .feedback input[type="text"] {
   width: 100%;
 }
@@ -560,6 +555,40 @@ table {
 }
 .produce-book .feedback .book-props .item .prop-label {
   margin-left: 10px;
+}
+.offer-book {
+  font-size: 15pt;
+}
+.offer-book .feedback input[type="text"] {
+  width: 100%;
+}
+.desc.special {
+  padding-bottom: 2px;
+}
+.desc.special.type-1 {
+  background: #ea43f5;
+}
+.desc.special.type-1 .special-head {
+  background: #962fa3;
+  padding: 20px 0;
+}
+.desc.special.type-1 .special-head .info-block {
+  padding: 10px 0;
+  color: #fff;
+  text-align: center;
+  text-indent: 0;
+}
+.desc.special.type-1 .special-head .buttons-wrapper {
+  margin-top: 5px;
+  font-size: 0;
+  text-align: center;
+}
+.desc.special.type-1 .special-head .buttons-wrapper .item {
+  display: inline-block;
+  margin-left: 20px;
+}
+.desc.special.type-1 .special-head .buttons-wrapper .item:first-child {
+  margin-left: 0;
 }
 .view-animate {
   opacity: 1;
@@ -1339,4 +1368,34 @@ input[type="checkbox"] + label.checkbox {
   height: 35px;
   border: 1px solid #b7b7b7;
   background: #fff;
+}
+p.info-block {
+  font-size: 13pt;
+  text-indent: 1.5em;
+  padding: 40px 0;
+  line-height: 1.8;
+}
+p.info-block .link {
+  text-decoration: underline !important;
+}
+p.info-block * {
+  text-indent: 0;
+}
+p.info-block + p.info-block {
+  padding-top: 0;
+}
+.desc {
+  padding: 50px 0;
+  background-size: cover;
+}
+.simple-button {
+  border: 2px solid #fff;
+  padding: 7px 10px 5px;
+  font-size: 10pt;
+  text-transform: uppercase;
+  color: #fff !important;
+  display: inline-block;
+}
+.simple-button:hover {
+  color: #fff !important;
 }

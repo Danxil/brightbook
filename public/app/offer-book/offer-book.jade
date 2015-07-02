@@ -1,55 +1,54 @@
-.produce-book
+.offer-book
     .container
-        .section-title Издать книгу за средства Автора/Заказчика:
-        .info-block Если вы хотите издать книгу, пожалуйста, заполните форму ниже, чтобы мы могли расчитать стоимость издания вашей книги.
+        .section-title.color-red Мы оценим ваш талант!
+        .section-title Предложите Издатеьству свою книгу
+        p.info-block Под возможностью предложить книгу для издания за средства Издательства мы понимаем приобретения права на издание книги. Заполните заявку ниже для рассмотрения Вашей заявки, но перед этим обязательно прочтите&nbsp;
+            a.link(href="") нашу декларацию.
         .feedback
             .feedback__inner
                 .row
                     .feedback__title Заявка
                     .feedback__rect
                     .feedback__square
-                label В каких допечатных процессах нуждается книга
-                .row.book-props
-                    .item
-                        input(type="checkbox" id="feedbackProp1")
-                        label.checkbox(for="feedbackProp1")
-                        label.prop-label(for="feedbackProp1") Перевод
-                    .item
-                        input(type="checkbox" id="feedbackProp2")
-                        label.checkbox(for="feedbackProp2")
-                        label.prop-label(for="feedbackProp2") Редактирование
-                    .item
-                        input(type="checkbox" id="feedbackProp3")
-                        label.checkbox(for="feedbackProp3")
-                        label.prop-label(for="feedbackProp3") Корректура
-                    .item
-                        input(type="checkbox" id="feedbackProp4")
-                        label.checkbox(for="feedbackProp4")
-                        label.prop-label(for="feedbackProp4") Верстка
-                    .item
-                        input(type="checkbox" id="feedbackProp5")
-                        label.checkbox(for="feedbackProp5")
-                        label.prop-label(for="feedbackProp5") Дизайн обложки
                 .row
-                    .row
-                        .col-lg-4
-                            label(for="feedbackFormat") Формат книги
-                            input(id="feedbackFormat" type="text")
-                        .col-lg-4
-                            label(for="feedbackCountSymbols") Количество знаков с пробелами
-                            input(id="feedbackCountSymbols" type="text")
-                        .col-lg-4
-                            label(for="feedbackCount") Тираж
-                            input(id="feedbackCount" type="text")
-                .row
-                    .col-lg-12
+                    .col-lg-6
                         .row
-                            label(for="feedbackMessage1") Тип (твердый переплет, мягкая обложка), бумага и красочность обложки
+                            label(for="feedbackMessage1") Название Вашей книги
                             input(id="feedbackMessage1" type="text")
                 .row
                     .col-lg-12
                         .row
-                            label(for="feedbackMessage1") Бумага и красочность внутренниего блока
+                            label(for="feedbackMessage1") Краткое содержание
+                            textarea(id="feedbackMessage1")
+                .row
+                    .col-lg-12
+                        .row
+                            label(for="feedbackName") Жанр и тема произведения
+                            input(id="feedbackName" type="text")
+                .row
+                    .col-lg-12
+                        .row
+                            label(for="feedbackPhone") Предпологаемый круг и уровень подготовки читателей
+                            input(id="feedbackPhone" type="text")
+                .row
+                    .col-lg-12
+                        .row
+                            label(for="feedbackEmail") Аннотация или синопсис для художественного произведения (не более 500 знаков)
+                            textarea(id="feedbackEmail")
+                .row
+                    .col-lg-6
+                        .row
+                            label(for="feedbackMessage1") Объем произведения в знаках с пробелами
+                            input(id="feedbackMessage1" type="text")
+                .row
+                    .col-lg-12
+                        .row
+                            label(for="feedbackMessage1") Основные  отличия предлагаемого издания от существующих (конкурентные преимущества)
+                            input(id="feedbackMessage1" type="text")
+                .row
+                    .col-lg-12
+                        .row
+                            label(for="feedbackMessage1") Ваши предложения по продвижению книги. Готовы ли вы участвовать в продвижении книги, и если да, то как?
                             input(id="feedbackMessage1" type="text")
                 .row
                     .row
@@ -64,3 +63,9 @@
                             input(id="feedbackEmail" type="text")
                 .row
                     button.feedback__submit отправить →
+        p.info-block
+            span.color-red Какие рукописи мы не рассматриваем и произведения не издаем:
+            br
+            span мистическую литературу или литературу с элементами мистики. То же касается оккультизма, других (не христианских) религий, карт, гаданий, нумерологии и астрологии. Пожалуйста, не присылайте намподобные рукописи.
+        p.info-block
+            span Отрывок из произведения нужно высылать после нашего запроса. Срок рассмотрения предложений авторов в нашем издательстве не менее 1 месяца. Условия публикации обсуждаются только после одобрения произведения. Рукописи не возвращаются и не рецензируются.

@@ -1,0 +1,19 @@
+.desc.special.type-1(data-set-transparent-header="")
+    .container
+        .special-head
+            .section-title.color-white Скоро
+            p.info-block Книги, которые поступят в продажу совсем скоро
+            ul.buttons-wrapper
+                .item
+                    a.simple-button Фильтр по категории
+                .item
+                    a.simple-button Фильтр по категории
+
+ul.books-list
+    li.item(data-ng-repeat="book in category.books" id="{{'book-id-' + book.id}}")
+
+.banner
+    .container
+        p.banner-title Мы ценим Вашу лояльность!
+        p.banner-title Книги из Вашей любимой серии "Бизнес" со скидкой -20%
+        button.subscribal__button(href=".main" data-scroll-to-anchor) к разделу
