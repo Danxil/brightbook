@@ -562,33 +562,79 @@ table {
 .offer-book .feedback input[type="text"] {
   width: 100%;
 }
-.desc.special {
+.desc.rubric {
   padding-bottom: 2px;
 }
-.desc.special.type-1 {
+.desc.rubric.type-1 {
   background: #ea43f5;
 }
-.desc.special.type-1 .special-head {
+.desc.rubric.type-1 .special-head {
   background: #962fa3;
   padding: 20px 0;
+  position: relative;
 }
-.desc.special.type-1 .special-head .info-block {
+.desc.rubric.type-1 .special-head .rubric-filters {
+  background: #962fa3;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+}
+.desc.rubric.type-1 .special-head .info-block {
   padding: 10px 0;
   color: #fff;
   text-align: center;
   text-indent: 0;
 }
-.desc.special.type-1 .special-head .buttons-wrapper {
+.desc.rubric.type-1 .special-head .buttons-wrapper {
   margin-top: 5px;
   font-size: 0;
   text-align: center;
 }
-.desc.special.type-1 .special-head .buttons-wrapper .item {
+.desc.rubric.type-1 .special-head .buttons-wrapper .item {
   display: inline-block;
   margin-left: 20px;
 }
-.desc.special.type-1 .special-head .buttons-wrapper .item:first-child {
+.desc.rubric.type-1 .special-head .buttons-wrapper .item:first-child {
   margin-left: 0;
+}
+.rubric-books-list {
+  font-size: 0;
+  text-align: center;
+}
+.rubric-books-list .item {
+  display: inline-block;
+}
+.rubric-books-list .item .link {
+  padding: 20px;
+}
+.rubric-books-list .item .link .img {
+  width: 200px;
+}
+.rubric-filters {
+  font-size: 0;
+  padding: 0 0 70px;
+  text-align: center;
+  display: none;
+}
+.rubric-filters .item {
+  display: inline-block;
+  margin: 50px 50px 0;
+}
+.rubric-filters .item .checkbox {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #5e7cff;
+  vertical-align: middle;
+}
+.rubric-filters .item input[type="checkbox"]:checked + .checkbox {
+  border-color: #ff1500;
+}
+.rubric-filters .item .label {
+  color: #fff;
+  font-size: 12pt;
+  margin-left: 10px;
+  vertical-align: middle;
 }
 .view-animate {
   opacity: 1;

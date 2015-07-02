@@ -1,0 +1,33 @@
+.desc.rubric(data-ng-class="{'type-1': rubric.id}" data-set-transparent-header="")
+    .container
+        .special-head
+            .section-title.color-white {{rubric.title}}
+            p.info-block {{rubric.description}}
+            ul.buttons-wrapper
+                .item
+                    a.simple-button(data-toggle-rubric-filter="#rubric-filter-1") Фильтр по категории
+                .item
+                    a.simple-button(data-toggle-rubric-filter="#rubric-filter-2") Фильтр по категории
+            ul.rubric-filters.rubric-filter#rubric-filter-1
+                li.item(data-ng-repeat="book in rubric.books")
+                    input(type="checkbox" id="filter1Prop{{book.id}}")
+                    label.checkbox(for="filter1Prop{{book.id}}")
+                    label.label(for="filter1Prop{{book.id}}") {{book.category}}
+            ul.rubric-filters.rubric-filter#rubric-filter-2
+                li.item(data-ng-repeat="book in rubric.books")
+                    input(type="checkbox" id="filter2Prop{{book.id}}")
+                    label.checkbox(for="filter2Prop{{book.id}}")
+                    label.label(for="filter2Prop{{book.id}}") {{book.author}}
+
+
+.container
+    ul.rubric-books-list(data-ng-class="{'type-1': rubric.id}")
+        li.item(data-ng-repeat="book in rubric.books")
+            a.link(data-ng-href="books/{{book.id}}")
+                img.img(data-ng-src="{{book.image}}")
+
+.banner
+    .container
+        p.banner-title Мы ценим Вашу лояльность!
+        p.banner-title Книги из Вашей любимой серии "Бизнес" со скидкой -20%
+        button.subscribal__button(href=".main" data-scroll-to-anchor) к разделу

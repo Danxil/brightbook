@@ -28,11 +28,49 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: '/partials/offer-book/offer-book',
             controller: 'bbOfferBookCtrl'
         })
-        .when('/special', {
-            templateUrl: '/partials/special/special',
-            controller: 'bbSpecialCtrl'
+        .when('/rubric/:rubricId', {
+            templateUrl: '/partials/rubric/rubric',
+            controller: 'bbRubricCtrl',
+            resolve: {
+                rubric: function ($q, $route, $timeout, $rootScope) {
+                    var def = $q.defer()
+
+                    var rubrics = {
+                        1: {
+                            id: 1,
+                            title: 'Электронные книги',
+                            description: 'Книги доступные только в форматах pdf и epub',
+                            books: [
+                                {
+                                    id: 1,
+                                    image: '/images/books/1/book-1.png',
+                                    category: 'Политика',
+                                    title: 'Межигорский Синдром. Диагноз власти Виктора Януковича',
+                                    author: 'Сергей Лещенко',
+                                },
+                                {
+                                    id: 2,
+                                    image: '/images/books/1/book-1.png',
+                                    category: 'Бизнес',
+                                    title: 'не Межигорский Синдром. Диагноз власти Виктора Януковича',
+                                    author: 'не Сергей Лещенко',
+                                }
+                            ]
+                        },
+                    }
+
+                    rubricId = $route.current.params.rubricId
+
+                    if (!rubrics[rubricId])
+                        def.reject()
+
+                    def.resolve(rubrics[rubricId])
+
+                    return def.promise
+                }
+            }
         })
-        .when('/category/:categoryId/', {
+        .when('/category/:categoryId', {
             templateUrl: '/partials/category/category',
             controller: 'bbCategoryCtrl',
             resolve: {
@@ -658,7 +696,7 @@ app.config(function ($routeProvider, $locationProvider) {
                 }
             }
         })
-        .when('/category/:categoryId/book/:bookId/', {
+        .when('/book/:bookId', {
             templateUrl: '/partials/book/book',
             controller: 'bbBookCtrl',
             resolve: {

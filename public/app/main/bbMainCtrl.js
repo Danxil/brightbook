@@ -5,35 +5,35 @@ angular.module('app').controller('bbMainCtrl', function ($scope, $http, $rootSco
             img2: "/images/books/main-books/book-2.png",
             title: "Межигорский Синдром.",
             author: "Сергей Лещенко",
-            link: "/category/3/book/2/"
+            id: "1"
         },
         {
             img: "/images/books/main-books/book-1.png",
             img2: "/images/books/main-books/book-2.png",
             title: "Межигорский Синдром.",
             author: "Сергей Лещенко",
-            link: "/category/3/book/2/"
+            id: "1"
         },
         {
             img: "/images/books/main-books/book-1.png",
             img2: "/images/books/main-books/book-2.png",
             title: "Межигорский Синдром.",
             author: "Сергей Лещенко",
-            link: "/category/3/book/2/"
+            id: "1"
         },
         {
             img: "/images/books/main-books/book-1.png",
             img2: "/images/books/main-books/book-2.png",
             title: "Межигорский Синдром.",
             author: "Сергей Лещенко",
-            link: "/category/3/book/2/"
+            id: "1"
         },
         {
             img: "/images/books/main-books/book-1.png",
             img2: "/images/books/main-books/book-2.png",
             title: "Межигорский Синдром.",
             author: "Сергей Лещенко",
-            link: "/category/3/book/2/"
+            id: "/2"
         }
     ];
 
