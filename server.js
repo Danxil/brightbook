@@ -10,7 +10,7 @@ var app = express();
 var config = require('./server/config/config')[env];
 
 require('./server/config/express')(app, config);
-var db = require('./server/config/db')(config);
+//var db = require('./server/config/db')(config);
 //db = require('./server/models')(db);
 
 //var passport = require('./server/config/passport')(app, db);
