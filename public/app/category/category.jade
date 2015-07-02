@@ -9,7 +9,7 @@ div(data-ng-repeat="book in category.books" id="{{'book-id-' + book.id}}")
     .book-description(style="background-image: url('{{book.bookBanner}}')")
         .container
             .column-wrapper-main
-                .column.one(data-ng-show="book.bookFormSideSchema == 'right'")
+                .column.one(data-ng-if="book.bookFormSideSchema == 'right'")
                     .book-icon-wrapp
                 .column.two
                     .book-application.with-bg

@@ -572,7 +572,6 @@ app.config(function ($routeProvider, $locationProvider) {
                                 {
                                     id: 1,
                                     bookFormSideSchema: 'left',
-                                    customBgSchema: '/images/books/cat-7-bg.jpg',
                                     image: '/images/books/1/book-1.png',
                                     category: 'Политика',
                                     categoryId: '1',

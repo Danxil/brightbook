@@ -1,10 +1,11 @@
-.slider
-    .slider__left-side
-        img(src="/images/books/1/book-1.png")
-    .slider__right-side
-        img(src="/images/books/lady.png")
-        .slider__text-small События
-        .slider__text-big Книжный аперитив с Ириной Славинской
+.container
+    .slider
+        .slider__left-side
+            img(src="/images/books/1/book-1.png")
+        .slider__right-side
+            img(src="/images/books/lady.png")
+            .slider__text-small События
+            .slider__text-big Книжный аперитив с Ириной Славинской
 .books-list
     .container
         .book(ng-repeat="book in books", ng-mouseover="switchBookImg(book)", ng-mouseout="switchBookImg(book)")
