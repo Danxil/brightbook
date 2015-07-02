@@ -13,18 +13,23 @@
                 .row
                     .col-lg-6
                         .row
-                            label(for="feedbackMessage1") Название Вашей книги
+                            label(for="feedbackMessage1") Название произведения
                             input(id="feedbackMessage1" type="text")
                 .row
                     .col-lg-12
                         .row
-                            label(for="feedbackMessage1") Краткое содержание
+                            label(for="feedbackMessage1") Содержание
                             textarea(id="feedbackMessage1")
                 .row
                     .col-lg-12
                         .row
                             label(for="feedbackName") Жанр и тема произведения
                             input(id="feedbackName" type="text")
+                .row
+                    .col-lg-6
+                        .row
+                            label(for="feedbackMessage1") Язык
+                            input(id="feedbackMessage1" type="text")
                 .row
                     .col-lg-12
                         .row
@@ -33,7 +38,7 @@
                 .row
                     .col-lg-12
                         .row
-                            label(for="feedbackEmail") Аннотация или синопсис для художественного произведения (не более 500 знаков)
+                            label(for="feedbackEmail") Аннотация для нон-фикшн или синопсис для художественного произведения (не более 500 знаков)
                             textarea(id="feedbackEmail")
                 .row
                     .col-lg-6
@@ -48,7 +53,12 @@
                 .row
                     .col-lg-12
                         .row
-                            label(for="feedbackMessage1") Ваши предложения по продвижению книги. Готовы ли вы участвовать в продвижении книги, и если да, то как?
+                            label(for="feedbackMessage1") Если есть таковые, то название ранее изданных произведения/ий, издатель и год выхода
+                            input(id="feedbackMessage1" type="text")
+                .row
+                    .col-lg-12
+                        .row
+                            label(for="feedbackMessage1") Ваши предложения по продвижению книги.
                             input(id="feedbackMessage1" type="text")
                 .row
                     .row
