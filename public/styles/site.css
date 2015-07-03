@@ -537,8 +537,7 @@ table {
   width: 100%;
 }
 .produce-book {
-  padding-top: 100px;
-  font-size: 15pt;
+  font-size: 13pt;
 }
 .produce-book .feedback input[type="text"] {
   width: 100%;
@@ -1539,7 +1538,7 @@ input[type="checkbox"] + label.checkbox {
 p.info-block {
   font-size: 13pt;
   text-indent: 1.5em;
-  padding: 40px 0;
+  padding: 40px 0 0;
   line-height: 1.8;
 }
 p.info-block .link {
@@ -1547,9 +1546,6 @@ p.info-block .link {
 }
 p.info-block * {
   text-indent: 0;
-}
-p.info-block + p.info-block {
-  padding-top: 0;
 }
 .desc {
   padding: 50px 0;

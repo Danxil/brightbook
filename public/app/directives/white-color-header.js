@@ -17,7 +17,13 @@ app.directive("whiteColorHeader", function($rootScope) {
 
 app.directive("setWhiteColorHeader", function($rootScope) {
     return {
+        scope: {
+          enabled: '&setWhiteColorHeader'
+        },
         link: function ($scope, elem, attrs) {
+            if ($scope.enabled() === false)
+                return
+
             $rootScope.whiteColorHeader = true
         }
     }

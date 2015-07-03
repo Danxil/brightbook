@@ -220,6 +220,7 @@ app.config(function ($routeProvider, $locationProvider) {
                         1: {
                             title: 'Книги о бизнесе',
                             bg: '/images/books/cat-2-bg.jpg',
+                            headerColor: 'white',
                             books: [
                                 {
                                     id: 1,
@@ -649,6 +650,7 @@ app.config(function ($routeProvider, $locationProvider) {
                         6: {
                             title: 'Книги о здоровье',
                             bg: '/images/books/cat-7-bg.jpg',
+                            headerColor: 'white',
                             textColorSchema: 'white',
                             books: [
                                 {
@@ -737,6 +739,7 @@ app.config(function ($routeProvider, $locationProvider) {
                             title: 'Книги из категории Биографии и мемуары',
                             bg: '/images/books/cat-8-bg.jpg',
                             textColorSchema: 'white',
+                            headerColor: 'white',
                             books: [
                                 {
                                     id: 1,
