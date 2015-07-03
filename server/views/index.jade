@@ -53,11 +53,11 @@ block main-content
     .sub-menu(ng-class="{'sub-menu_visible': subMenuMarkers.moreVisible}")
         .container.categories
             .container.categories
-                a.categories__item Где купить наши книги
+                a.categories__item(href="/where-by") Где купить наши книги
                 a.categories__item(href="/produce-book") Заказать издание книги
                 a.categories__item(href="/offer-book") Для авторов
                 a.categories__item(href="/contacts") Контакты
-                a.categories__item Об издательстве
+                a.categories__item(href="/about") Об издательстве
     .sub-menu(ng-class="{'sub-menu_visible': subMenuMarkers.loginVisible}")
         .container.categories
             p.auth-result(data-ng-show="authorisation.loginError == 401") Неверный email/пароль.

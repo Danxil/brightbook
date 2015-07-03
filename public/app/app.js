@@ -1,6 +1,18 @@
-var app = angular.module('app', ['ngResource', 'ngRoute', 'ngAnimate', 'ngSanitize', 'duScroll', 'ipCookie']);
+var app = angular.module('app', [
+    'ngResource',
+    'ngRoute',
+    'ngAnimate',
+    'ngSanitize',
+    'duScroll',
+    'ipCookie',
+    'uiGmapgoogle-maps'
+]);
 
-app.config(function ($routeProvider, $locationProvider) {
+app.config(function ($routeProvider, $locationProvider, uiGmapGoogleMapApiProvider) {
+    uiGmapGoogleMapApiProvider.configure({
+        china: true
+    });
+
     $locationProvider.html5Mode({
         enabled: true,
         requireBase: false
@@ -27,6 +39,14 @@ app.config(function ($routeProvider, $locationProvider) {
         .when('/offer-book', {
             templateUrl: '/partials/offer-book/offer-book',
             controller: 'bbOfferBookCtrl'
+        })
+        .when('/about', {
+            templateUrl: '/partials/about/about',
+            controller: 'bbAboutCtrl'
+        })
+        .when('/where-by', {
+            templateUrl: '/partials/where-by/where-by',
+            controller: 'bbWhereByCtrl'
         })
         .when('/rubric/:rubricId', {
             templateUrl: '/partials/rubric/rubric',

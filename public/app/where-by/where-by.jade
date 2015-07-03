@@ -1,0 +1,35 @@
+.where-by
+    .container
+        .section-title Где купить наши книги в розницу
+        img.main-map(src="/images/main_map.jpg")
+        ul.places.retail
+            .item(data-ng-repeat="place in places.retail")
+                .table-wrapp
+                    .cell.map
+                        ui-gmap-google-map.map(center="place.map.center", zoom="12")
+                            ui-gmap-marker(coords="place.map.marker.coords" icon="place.map.marker.icon" idKey="$index")
+                    .cell.contact-info
+                            p.color-red {{place.city}}
+                            p Магазин "{{place.shopTitle}}"
+                            p Магазин "{{place.address}}"
+                            p Тел.:
+                                span(data-ng-repeat="phone in place.phones") {{phone}}
+                            p {{place.email}}
+                    .cell.img
+                        img(data-ng-src="{{place.img}}")
+        .section-title Где купить наши книги оптом
+        ul.places.wholesale
+            .item(data-ng-repeat="place in places.wholesale")
+                .table-wrapp
+                    .cell.map
+                        ui-gmap-google-map.map(center="place.map.center", zoom="12")
+                            ui-gmap-marker(coords="place.map.marker.coords" icon="place.map.marker.icon" idKey="$index")
+                    .cell.contact-info
+                        p.color-red {{place.city}}
+                        p Магазин "{{place.shopTitle}}"
+                        p Магазин "{{place.address}}"
+                        p Тел.:
+                            span(data-ng-repeat="phone in place.phones") {{phone}}
+                        p {{place.email}}
+                    .cell.img
+                        img(data-ng-src="{{place.img}}")

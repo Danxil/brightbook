@@ -717,6 +717,69 @@ table {
   margin-left: 10px;
   vertical-align: middle;
 }
+.bg-about {
+  height: 600px;
+  background: url("../images/about_bg.jpg") center bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.about {
+  padding-top: 40px;
+  font-size: 20px;
+  font-size: 13pt;
+}
+.about .bottom-block {
+  text-indent: 1.5em;
+  line-height: 1.8;
+  margin-top: 20px;
+}
+.where-by {
+  padding-top: 40px;
+  font-size: 20px;
+  font-size: 13pt;
+}
+.where-by .main-map {
+  width: 500px;
+  margin: 30px auto 0;
+  display: block;
+}
+.where-by .places {
+  margin-top: 40px;
+}
+.where-by .places.retail {
+  margin-bottom: 60px;
+}
+.where-by .places.wholesale {
+  margin-top: 60px;
+}
+.where-by .places .item {
+  margin-top: 40px;
+}
+.where-by .places .item:first-child {
+  margin-top: 0;
+}
+.where-by .places .item .table-wrapp {
+  font-size: 0;
+  display: table;
+}
+.where-by .places .item .table-wrapp .cell {
+  display: table-cell;
+  vertical-align: top;
+}
+.where-by .places .item .table-wrapp .cell.map .angular-google-map-container {
+  width: 250px;
+  height: 200px;
+}
+.where-by .places .item .table-wrapp .cell.contact-info {
+  padding: 30px 40px 0;
+  width: 100%;
+  background: #ededed;
+  font-size: 13pt;
+  line-height: 1.8;
+}
+.where-by .places .item .table-wrapp .cell.img img {
+  height: 200px;
+}
 .view-animate {
   opacity: 1;
 }
