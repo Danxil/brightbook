@@ -54,6 +54,7 @@ db.sequelize.sync().then(function () {
 
             if (user)
                 return fn(user)
+            
             db.User.create({
                 login: 'admin@admin.com',
                 password: '1'
