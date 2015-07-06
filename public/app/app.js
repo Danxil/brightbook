@@ -48,6 +48,10 @@ app.config(function ($routeProvider, $locationProvider, uiGmapGoogleMapApiProvid
             templateUrl: '/partials/where-by/where-by',
             controller: 'bbWhereByCtrl'
         })
+        .when('/news', {
+            templateUrl: '/partials/news/news',
+            controller: 'bbNewsCtrl'
+        })
         .when('/rubric/:rubricId', {
             templateUrl: '/partials/rubric/rubric',
             controller: 'bbRubricCtrl',

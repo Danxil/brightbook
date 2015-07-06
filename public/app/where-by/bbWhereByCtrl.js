@@ -110,7 +110,7 @@ angular.module('app').controller('bbWhereByCtrl', function ($scope, $http, $root
                         icon: '/images/star.png'
                     }
                 }
-            },  
+            },
         ]
     }
 });

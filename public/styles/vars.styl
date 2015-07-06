@@ -50,8 +50,14 @@ extradarkgray = #333
 .text-left
   text-align: left
 
-.underline
+.underline,
+.underline *
   text-decoration underline !important
+
+.underline
+  &:hover,
+  &:hover *
+    text-decoration none !important
 
 placeholder-color(color)
   &::-webkit-input-placeholder
