@@ -10,16 +10,15 @@ var app = express();
 var config = require('./server/config/config')[env];
 
 require('./server/config/express')(app, config);
-//var db = require('./server/config/db')(config);
-//db = require('./server/models')(db);
+var db = require('./server/config/db')(config);
+db = require('./server/models')(db);
 
-//var passport = require('./server/config/passport')(app, db);
+var passport = require('./server/config/passport')(app, db);
 
 var emailService = require('./server/apiServices/emailService')(config);
 
-//require('./server/config/routes')(app, db, emailService, passport);
-require('./server/config/routes')(app, null, emailService, null);
-/*
+require('./server/config/routes')(app, db, emailService, passport);
+
 db.sequelize.sync().then(function () {
     function createGroup(name, access) {
         var def = q.defer()
@@ -45,25 +44,22 @@ db.sequelize.sync().then(function () {
         db.User.findOne({where: {
             login: 'admin'
         }}).then(function(user) {
-            fn = function() {
-                adminGroup.setUser().then(function(){
+            fn = function(user) {
+                adminGroup.setUser(user).then(function(){
                     app.listen(config.port);
                     console.log('Listening on port ' + config.port + '...');
+                    console.log('Node enviroment: ' + env)
                 })
             }
 
             if (user)
-                return fn()
+                return fn(user)
             db.User.create({
-                login: 'admin',
+                login: 'admin@admin.com',
                 password: '1'
-            }).then(function() {
-                fn()
-
+            }).then(function(user) {
+                fn(user)
             })
         })
     })
 });
-*/
-app.listen(config.port);
-console.log('Listening on port ' + config.port + '...');

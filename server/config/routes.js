@@ -1,7 +1,7 @@
 var crypto = require('crypto')
 
 module.exports = function (app, db, emailService, passport) {
-    //var checkUser = passport.authenticate('local')
+    var checkUser = passport.authenticate('local')
 
     var ensureAuthenticated = function (req, res, next) {
         if (req.isAuthenticated()) { return next(); }
@@ -34,7 +34,6 @@ module.exports = function (app, db, emailService, passport) {
             res.send(401)
     })
 
-    /*
     app.post('/api/login', checkUser, function (req, res) {
         var username = req.body.login
 
@@ -62,7 +61,6 @@ module.exports = function (app, db, emailService, passport) {
             res.send(400, error)
         })
     });
-    */
 
     app.get('*', function (req, res) {
         res.render('index');
