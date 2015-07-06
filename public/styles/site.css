@@ -813,6 +813,14 @@ table {
 .news-page .table .cell .img {
   width: 100%;
 }
+.news-page .refresh-btn {
+  display: inline-block;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+.news-page .refresh-btn .fa {
+  font-size: 35px;
+}
 .view-animate {
   opacity: 1;
 }
