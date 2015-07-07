@@ -42,7 +42,7 @@ db.sequelize.sync().then(function () {
         var adminGroup = results[0]
 
         db.User.findOne({where: {
-            login: 'admin'
+            login: 'admin@admin.com'
         }}).then(function(user) {
             fn = function(user) {
                 adminGroup.setUser(user).then(function(){

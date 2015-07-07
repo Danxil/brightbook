@@ -30,5 +30,5 @@ module.exports = {
         dbUser: 'sql482917',
         dbPass: 'bX4%qT8%'
     }
-    
+
 };
