@@ -235,13 +235,21 @@ table {
   background: rgba(255,255,255,0.7);
   padding: 30px;
 }
+.book-application.with-bg .category {
+  padding-right: 80px;
+}
+.book-application.with-bg .slogan {
+  padding-right: 80px;
+}
 .book-application .category {
   font-size: 14pt;
   color: #b7b7b7;
+  padding-right: 80px;
 }
 .book-application .slogan {
   font-size: 25pt;
   margin-top: 20px;
+  padding-right: 80px;
 }
 .book-application .title {
   font-size: 17pt;
