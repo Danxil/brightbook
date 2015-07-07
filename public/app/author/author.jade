@@ -1,0 +1,15 @@
+.author
+    .container
+        .newpiece.true.full-with
+            img(data-ng-src="{{author.avatar}}").newpiece__image
+            .newpiece__info
+                .section-title {{author.name}}
+                span.newpiece__title.italic - {{author.aboutAuthor}}
+                .bottom-line
+                    a.color-red.underline(data-ng-href="{{author.fbLink}}") facebook
+                    a.color-red.underline(data-ng-href="{{author.blogLink}}") блог на УП
+        p.banner-title.text-center(data-ng-class="{'color-black': category.textColorSchema == 'black'}") Книги автора
+        ul.category-books-list
+            li.item(data-ng-repeat="book in author.books")
+                a.link(href="{{'/book/' + book.id}}")
+                    img.image(src="{{book.image}}")

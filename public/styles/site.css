@@ -249,6 +249,15 @@ table {
   color: #c20e1a;
   margin-top: 20px;
 }
+.book-application .book-link {
+  margin-top: 20px;
+  display: inline-block;
+  text-decoration: underline !important;
+  color: #c20e1a !important;
+}
+.book-application .book-link:hover {
+  text-decoration: none !important;
+}
 .book-application .subscribal__button + .chose-book-type {
   margin-top: 20px;
 }
@@ -820,6 +829,19 @@ table {
 }
 .news-page .refresh-btn .fa {
   font-size: 35px;
+}
+.author .newpiece {
+  background: #fff;
+}
+.author .newpiece .bottom-line a {
+  display: inline-block;
+  margin-left: 40px;
+}
+.author .newpiece .bottom-line a:first-child {
+  margin-left: 0;
+}
+.author .banner-title {
+  color: #333;
 }
 .view-animate {
   opacity: 1;
@@ -1669,4 +1691,39 @@ p.info-block * {
 .newpiece__info .section-title {
   margin-top: 20px;
   text-align: left;
+}
+.favorite-strip {
+  background: url("../images/flag.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  width: 65px;
+  height: 104px;
+  position: absolute;
+  top: 0;
+  right: 15px;
+  z-index: 10;
+}
+.favorite-strip:after {
+  content: '';
+  display: block;
+  left: 0%;
+  right: 0%;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  background: url("../images/flag.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+.favorite-strip:before {
+  content: '';
+  display: block;
+  left: 0%;
+  right: 0%;
+  top: 0;
+  bottom: 20px;
+  position: absolute;
+}
+.favorite-strip.active:before {
+  background: #ff0;
 }

@@ -13,10 +13,10 @@ div(data-ng-repeat="book in category.books" id="{{'book-id-' + book.id}}")
                     .book-icon-wrapp
                 .column.two
                     .book-application.with-bg
+                        a.favorite-strip
                         p.category Раздел "{{book.category}}"
                         p.slogan {{book.title}}
                         p.title {{book.author}}
-                        a.subscribal__button.single(data-ng-href="/book/{{book.id}}") Пролистать книгу онлайн
                         .chose-book-type
                             ul.type-toggler(data-tabs="")
                                 li.item
@@ -38,6 +38,7 @@ div(data-ng-repeat="book in category.books" id="{{'book-id-' + book.id}}")
                                     .by-link-wrapper
                                         a.by-link купить
                                     .clearfix
+                        a.title.book-link(data-ng-href="/book/{{book.id}}") Пролистать книгу онлайн
     .desc(style="background-image: url('{{book.customBgSchema || category.bg}}');")
         .container
             div(data-ng-show="book.bookReason")
