@@ -2,8 +2,8 @@ app.directive("menuSlide", function($rootScope) {
     return {
         link: function ($scope, elem, attrs) {
             var frame = 1
-            var maxFrames = Math.ceil($('.menu-slide').height() / height)
             var height = parseInt($('.container-wrapper').height())
+            var maxFrames = Math.ceil($('.menu-slide').height() / height)
 
             function checkActive() {
                 $('.menu-slide-up').removeClass('not-active')
