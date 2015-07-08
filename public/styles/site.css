@@ -1700,6 +1700,14 @@ p.info-block * {
   margin-top: 20px;
   text-align: left;
 }
+.more-link.down {
+  display: inline-block;
+  margin-top: 15px;
+}
+.more-link.not-active {
+  opacity: 0;
+  cursor: default !important;
+}
 .favorite-strip {
   background: url("../images/flag.png");
   background-repeat: no-repeat;
@@ -1734,4 +1742,13 @@ p.info-block * {
 }
 .favorite-strip.active:before {
   background: #ff0;
+}
+.container-wrapper {
+  height: 150px;
+  overflow: hidden;
+}
+.container-wrapper .categories {
+  position: relative;
+  top: 0;
+  transition: 0.5s;
 }

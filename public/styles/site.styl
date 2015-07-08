@@ -798,6 +798,15 @@ p.info-block
     margin-top 20px
     text-align left
 
+.more-link
+  &.down
+    display inline-block
+    margin-top 15px
+
+  &.not-active
+    opacity 0
+    cursor default !important
+
 .favorite-strip
   background url('../images/flag.png')
   background-repeat no-repeat
@@ -833,3 +842,12 @@ p.info-block
   &.active
     &:before
       background yellow
+
+.container-wrapper
+  height 150px
+  overflow hidden
+
+  .categories
+    position relative
+    top 0
+    transition .5s
