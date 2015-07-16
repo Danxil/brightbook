@@ -25,10 +25,7 @@ module.exports = {
         emailPort: '587',
         fromEmail: 'eriendel97@gmail.com',
         managerEmail: 'artem@likefor.org',
-        dbHost: 'sql4.freemysqlhosting.net',
-        db: 'sql482917',
-        dbUser: 'sql482917',
-        dbPass: 'bX4%qT8%'
+        dbUrl: process.env.CLEARDB_DATABASE_URL
     }
 
 };
