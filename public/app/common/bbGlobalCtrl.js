@@ -1,11 +1,30 @@
-angular.module('app').controller('bbGlobalCtrl', function (
+app.controller('bbGlobalCtrl', function(
     $scope,
     $rootScope,
     $document,
     $timeout,
     authorisation,
-    $location
+    $location,
+    categories,
+    rubrics
 ) {
+    $scope.menu = {}
+
+    rubrics.getAll().then(function(result) {
+        $scope.menu.rubrics = result.data.data
+    })
+
+    categories.getAll().then(function(result) {
+        var data = result.data.data
+        $scope.menu.categories = _.filter(data, function(item) {
+            return !item.highlight
+        })
+
+        $scope.menu.highlightCategories = _.filter(data, function(item) {
+            return item.highlight
+        })
+    })
+
     authorisation.getUserData().then(function(userData) {
         $scope.authorisation.userData = userData
     }, function() {

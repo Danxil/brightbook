@@ -1752,3 +1752,8 @@ p.info-block * {
   top: 0;
   transition: 0.5s;
 }
+pre {
+  font-family: inherit !important;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}

@@ -36,35 +36,18 @@ block main-content
         p.text-center
             a.more-link.up.menu-slide-up Еще
         .container-wrapper
-            .container.categories.menu-slide(data-menu-slide="")
+            .container.categories.menu-slide(data-menu-slide="menu")
                 p
-                   a.categories__item(href="/category/1") Бизнес
-                   a.categories__item(href="/category/7") Биографии и мемуары
-                   a.categories__item(href="/category/12") Детские
-                   a.categories__item(href="/category/6") Здоровье
-                   a.categories__item(href="/category/8") Мужчина и женщина
-                   a.categories__item(href="/category/6") Политика
-                   a.categories__item(href="/category/10") Родителям
-                   a.categories__item(href="/category/2") Саморазвитие
-                   a.categories__item(href="/category/9") Христианство
-                   a.categories__item(href="/category/11") Художественные
+                    a.categories__item(ng-href="/category/{{category.id}}" ng-class="{'categories__item_fancy': category.highlight}" ng-repeat="category in menu.categories") {{category.name}}
                 p
-                   a.categories__item.categories__item_fancy(href="/category/3") Подарок мужчине
-                   a.categories__item.categories__item_fancy(href="/category/4") В подарок женщине
-                   a.categories__item.categories__item_fancy(href="/category/5") В отпуск
+                    a.categories__item(ng-href="/category/{{category.id}}" ng-class="{'categories__item_fancy': category.highlight}" ng-repeat="category in menu.highlightCategories") {{category.name}}
                 p
-                    a.categories__item.categories__item_fancy(href="/category/9") Теплые истории
-                p
-                    a.categories__item(href="/rubric/1") Бестселлеры
-                    a.categories__item(href="/rubric/2") Новинки
-                    a.categories__item(href="/rubric/3") Рекомендуемые
-                    a.categories__item(href="/rubric/4") Скоро
-                    a.categories__item(href="/rubric/5") Электронные книги
+                    a.categories__item(ng-href="/rubric/{{rubric.id}}" ng-repeat="rubric in menu.rubrics") {{rubric.name}}
         p.text-center
             a.more-link.down.menu-slide-down Еще
     .sub-menu(ng-class="{'sub-menu_visible': subMenuMarkers.authorsVisible}")
         .container.categories
-           .h3 Авторы
+            .h3 Авторы
     .sub-menu(ng-class="{'sub-menu_visible': subMenuMarkers.moreVisible}")
         .container.categories
             .container.categories
@@ -107,7 +90,7 @@ block main-content
                     a(data-ng-click="authorisation.registrationActive = false") Я уже зарегистрирован
     .sub-menu(ng-class="{'sub-menu_visible': subMenuMarkers.searchVisible}")
         .container.categories
-           .h3 Поиск
+            .h3 Поиск
     .main.view-animate(ng-view data-scroll-top)
     .container
         .footer.h6

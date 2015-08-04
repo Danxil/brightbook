@@ -1,22 +1,22 @@
-.desc(style="background-image: url('{{category.bg}}');" data-set-transparent-header="" data-set-white-color-header="category.headerColor == 'white'")
+.desc(style="background-image: url('{{config.MEDIA_URL + category.bgs[0].link}}');" data-set-transparent-header="" data-set-white-color-header="category.headerColor.color == 'white'")
     .container
-        .banner-title.text-center(data-ng-class="{'color-black': category.textColorSchema == 'black'}") {{category.title}}
+        .banner-title.text-center(data-ng-class="{'color-black': category.headerColor.color == 'black'}") {{category.name}}
         ul.category-books-list
-            li.item(data-ng-repeat="book in category.books")
+            li.item(data-ng-repeat="book in books")
                 a.link(href="{{'#book-id-' + book.id}}" data-scroll-to-anchor)
-                    img.image(src="{{book.image}}")
-div(data-ng-repeat="book in category.books" id="{{'book-id-' + book.id}}")
-    .book-description(style="background-image: url('{{book.bookBanner}}')")
+                    img.image(src="{{config.MEDIA_URL + book.images[0].link}}")
+div(data-ng-repeat="book in books" id="{{'book-id-' + book.id}}")
+    .book-description(style="background-image: url('{{config.MEDIA_URL + book.banners[0].link}}')")
         .container
             .column-wrapper-main
-                .column.one(data-ng-if="book.bookFormSideSchema == 'right'")
+                .column.one(data-ng-if="book.formSideSchema.side == 'right'")
                     .book-icon-wrapp
                 .column.two
                     .book-application.with-bg
                         a.favorite-strip
-                        p.category Раздел "{{book.category}}"
-                        p.slogan {{book.title}}
-                        p.title {{book.author}}
+                        p.category Раздел "{{category.name}}"
+                        p.slogan {{book.name}}
+                        p.title {{book.authors[0].name}}
                         .chose-book-type
                             ul.type-toggler(data-tabs="")
                                 li.item
@@ -26,23 +26,23 @@ div(data-ng-repeat="book in category.books" id="{{'book-id-' + book.id}}")
                             .price-block
                                 .item(id="book-type-one-2-{{book.id}}")
                                     span.price-wrapper
-                                        span.price {{book.price.analog}}&nbsp;
+                                        span.price {{book.priceE}}&nbsp;
                                         span.currency гривен
                                     .by-link-wrapper
                                         a.by-link купить
                                     .clearfix
                                 .item(id="book-type-two-2-{{book.id}}")
                                     span.price-wrapper
-                                        span.price {{book.price.ebook}}&nbsp;
+                                        span.price {{book.priceA}}&nbsp;
                                         span.currency гривен
                                     .by-link-wrapper
                                         a.by-link купить
                                     .clearfix
                         a.title.book-link(data-ng-href="/book/{{book.id}}") Пролистать книгу онлайн
-    .desc(style="background-image: url('{{book.customBgSchema || category.bg}}');")
+    .desc(style="background-image: url('{{config.MEDIA_URL + category.bgs[0].link}}');")
         .container
             div(data-ng-show="book.bookReason")
-                .banner-title.text-center(data-ng-class="{'color-black': category.textColorSchema == 'black'}" ) В чем ценность книнги "{{book.title}}"
+                .banner-title.text-center(data-ng-class="{'color-black': category.headerColor.color == 'black'}" ) В чем ценность книнги "{{book.title}}"
                 .newpiece.true.full-with
                     img(data-ng-src="/images/books/portret.png").newpiece__image
                     .newpiece__info
@@ -53,10 +53,10 @@ div(data-ng-repeat="book in category.books" id="{{'book-id-' + book.id}}")
                     .banner-title.text-left(data-ng-class="{'color-black': category.textColorSchema == 'black'}" ) Автор
                     .newpiece-wrapp
                         .newpiece.true
-                            img(data-ng-src="{{book.authorAvatar}}").newpiece__image
+                            img(data-ng-src="{{config.MEDIA_URL + book.authors[0].photos[0].link}}").newpiece__image
                             .newpiece__info
                                 .newpiece__date О авторе
-                                .newpiece__title(data-ng-init="aboutAuthorLimit = 80") {{book.aboutAuthor | maxSymbols:aboutAuthorLimit}}
+                                .newpiece__title(data-ng-init="aboutAuthorLimit = 80") {{book.authors[0].about | maxSymbols:aboutAuthorLimit}}
                                 a.link.more.bottom-line(data-ng-show="aboutAuthorLimit < 1000000" data-ng-click="aboutAuthorLimit = aboutAuthorLimit * 1000000") развернуть &#8595;
                                 a.link.more.bottom-line(data-ng-show="aboutAuthorLimit > 1000000" data-ng-click="aboutAuthorLimit = aboutAuthorLimit / 1000000") свернуть &#8593;
                         .clearfix
@@ -65,7 +65,8 @@ div(data-ng-repeat="book in category.books" id="{{'book-id-' + book.id}}")
                         .newpiece.true
                             .newpiece__info
                                 .newpiece__date О книге
-                                .newpiece__title(data-ng-init="aboutBookLimit = 400" ng-bind-html="book.aboutBook | maxSymbols:aboutBookLimit")
+                                .newpiece__title(data-ng-init="aboutBookLimit = 400")
+                                    pre(ng-bind-html="book.about | maxSymbols:aboutBookLimit")
                                 a.link.more.bottom-line(data-ng-show="aboutBookLimit < 1000000" data-ng-click="aboutBookLimit = aboutBookLimit * 1000000") развернуть &#8595;
                                 a.link.more.bottom-line(data-ng-show="aboutBookLimit > 1000000" data-ng-click="aboutBookLimit = aboutBookLimit / 1000000") свернуть &#8593;
                         .clearfix

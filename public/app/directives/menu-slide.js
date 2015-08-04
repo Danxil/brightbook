@@ -2,10 +2,12 @@ app.directive("menuSlide", function($rootScope) {
     return {
         link: function ($scope, elem, attrs) {
             var frame = 1
-            var height = parseInt($('.container-wrapper').height())
-            var maxFrames = Math.ceil($('.menu-slide').height() / height)
+            var height, maxFrames
 
             function checkActive() {
+                height = parseInt($('.container-wrapper').height())
+                maxFrames = Math.ceil($('.menu-slide').height() / height)
+
                 $('.menu-slide-up').removeClass('not-active')
                 $('.menu-slide-down').removeClass('not-active')
 
@@ -42,7 +44,9 @@ app.directive("menuSlide", function($rootScope) {
                 $('.menu-slide').css('top', top - height + 'px')
             })
 
-            checkActive()
+            $scope.$watch(attrs.menuSlide, function(a) {
+                checkActive()
+            }, true)
         }
     }
 })
