@@ -263,7 +263,7 @@ app.config(function ($routeProvider, $locationProvider, uiGmapGoogleMapApiProvid
             templateUrl: '/partials/category/category',
             controller: 'bbCategoryCtrl',
             resolve: {
-                data: function($q, $route, categories, books, authors) {
+                data: function($q, $route, categories, books, authors, bookReasons) {
                     var def = $q.defer()
                       , data = {}
                       , id = $route.current.params.categoryId
@@ -278,17 +278,26 @@ app.config(function ($routeProvider, $locationProvider, uiGmapGoogleMapApiProvid
                             booksDefs.push(def.promise)
 
                             books.getOne(item.id).then(function(result) {
+                                var defArr = []
+
                                 var book = result.data.data
 
-                                if (!book.authors.length)
-                                    return def.resolve(book)
-
-                                _.each(book.authors, function(author, index) {
-                                    authors.getOne(author.id).then(function(result) {
-                                        book.authors[index] = result.data.data
-
-                                        def.resolve(book)
+                                if (book.authors.length)
+                                    _.each(book.authors, function(author, index) {
+                                        defArr.push(authors.getOne(author.id).then(function(result) {
+                                            book.authors[index] = result.data.data
+                                        }))
                                     })
+
+                                if (book.reasons.length)
+                                    _.each(book.reasons, function(reason, index) {
+                                        defArr.push(bookReasons.getOne(reason.id).then(function(result) {
+                                            book.reasons[index] = result.data.data
+                                        }))
+                                    })
+
+                                $q.all(defArr).then(function() {
+                                    def.resolve(book)
                                 })
                             })
 

@@ -41,16 +41,16 @@ div(data-ng-repeat="book in books" id="{{'book-id-' + book.id}}")
                         a.title.book-link(data-ng-href="/book/{{book.id}}") Пролистать книгу онлайн
     .desc(style="background-image: url('{{config.MEDIA_URL + category.bgs[0].link}}');")
         .container
-            div(data-ng-show="book.bookReason")
-                .banner-title.text-center(data-ng-class="{'color-black': category.headerColor.color == 'black'}" ) В чем ценность книнги "{{book.title}}"
+            div(data-ng-show="book.reasons.length")
+                .banner-title.text-center(data-ng-class="{'color-black': category.headerColor.color == 'black'}" ) В чем ценность книнги "{{book.name}}"
                 .newpiece.true.full-with
-                    img(data-ng-src="/images/books/portret.png").newpiece__image
+                    img(data-ng-src="{{config.MEDIA_URL + book.reasons[0].avatars[0].link}}").newpiece__image
                     .newpiece__info
-                        span.newpiece__title.italic(data-ng-bind-html="book.bookReason.text")
-                        .bottom-line.author {{book.bookReason.author}}
+                        pre.newpiece__title.italic(data-ng-bind-html="book.reasons[0].text")
+                        .bottom-line.author {{book.reasons[0].author}}
             .column-wrapper-main
                 .column.one
-                    .banner-title.text-left(data-ng-class="{'color-black': category.textColorSchema == 'black'}" ) Автор
+                    .banner-title.text-left(data-ng-class="{'color-black': category.headerColor.color == 'black'}" ) Автор
                     .newpiece-wrapp
                         .newpiece.true
                             img(data-ng-src="{{config.MEDIA_URL + book.authors[0].photos[0].link}}").newpiece__image
